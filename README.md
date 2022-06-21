@@ -4,4 +4,3 @@
 ```
 ___
 + <a href=""><b>Git , GitHub</b></a>  
-  + GitHub Desktop 사용법
