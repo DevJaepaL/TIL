@@ -1,4 +1,7 @@
-# Today I Learned Diary
+# Today I Learned 📘
 ```
-공부 일기장.
+오늘 공부한 것을 기록하고자 합니다. 
 ```
+___
++ <a href=""><b>Git , GitHub</b></a>  
+  + GitHub Desktop 사용법
