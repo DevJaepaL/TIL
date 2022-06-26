@@ -187,7 +187,6 @@ Math 객체는 new Math()로 생성되지 않고, 다음과 같이 사용된다.
 
 다음은 Math를 이용해 구구단 연습을 하는 예제이다.
 ```javascript
-    <script>
         function randomNum(){ // 1에서 9 사이의 난수 리턴
             return Math.floor(Math.random() * 9) + 1;
         }
@@ -208,7 +207,6 @@ Math 객체는 new Math()로 생성되지 않고, 다음과 같이 사용된다.
             else
                 document.wirte("오답 !");
         }
-    </script>
 
 ```
 
@@ -381,7 +379,6 @@ HTML 태그중 몇몇 태그는, 특정 이벤트에 대한 **디폴트 행동**
 
 다음 코드는 마우스 관련 이벤트 리스너 예제이다.
 ```javascript
-<script>
     let width = 1;  //테두리 두께
     function down(obj){
         obj.style.fontStyle = "italic";
@@ -405,8 +402,6 @@ HTML 태그중 몇몇 태그는, 특정 이벤트에 대한 **디폴트 행동**
         obj.style.borderStyle = "ridge";
         obj.style.borderwidth = width + "px";
     }
-</script>
-<html>
     <body>
         <div>마우스 관련
         <span   onmousedown = "down(this)"
@@ -418,7 +413,6 @@ HTML 태그중 몇몇 태그는, 특정 이벤트에 대한 **디폴트 행동**
                 이벤트</span>가 발생합니다.
         </div>
     </body>
-</html>
 ```
 
 <br>
@@ -569,9 +563,9 @@ div.onclick = function (e) { // 마우스 클릭 이벤트 리스너
 }
 
 function doRotate() {
-	var str = div.innerHTML;
-	var firstChar = str.substr(0, 1); // str 텍스트의 첫 문자
-	var remains = str.substr(1, str.length-1); 
+	let str = div.innerHTML;
+	let firstChar = str.substr(0, 1); // str 텍스트의 첫 문자
+	let remains = str.substr(1, str.length-1); 
     // 첫 문자를 제외한 나머지 문자열
 
 	str = remains + firstChar;
