@@ -10,7 +10,6 @@ ___
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/C"><b>`C`</b></a>  
   + 구조체 (Structure)
   + 열거형 (Enum)
-___
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JavaScript"><b>`JavaScript`</b></a>  
   + 자바스크립트 기초 정리
