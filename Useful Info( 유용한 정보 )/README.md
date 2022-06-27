@@ -1,7 +1,6 @@
 ## 🍯 유용한 정보 , 꿀팁 모음 🍯
-___
 
-#### Velog , Tistory , branch , GitHub, Stack Overflow 등 각 사이트를 돌아다니며 유용한 정보들을 모아두는 저장소 입니다. 🍯
+#### Velog , Tistory , branch , GitHub, Stack Overflow 등 <br>각 사이트를 돌아다니며 유용한 정보들을 모아두는 저장소 입니다. 🍯
 
 + <a href="">Back-End</a>
     + 2021 백엔드 개발자 로드맵 (Velog) 🗺️
