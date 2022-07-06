@@ -5,7 +5,7 @@ ___
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Back-End"><b>Back-End</b></a>
     + 2021 백엔드 개발자 로드맵 (Velog) 🗺️
-    + 최근 면접을 다니면서 받았던 질문들 ✔
+    + 최근 면접을 다니면서 받았던 질문들 ( Velog ) ✔
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Front-End"><b>Front-End</b></a>
     + 프론트엔드 개발자라면 반드시 알아두어야 할 32가지의 UI 요소 🎨  (Velog)
