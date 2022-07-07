@@ -25,6 +25,6 @@ ___
     + 서류탈락하는 개발자 포트폴리오의 특징 (Velog)
     
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Computer-Science">Computer Science</a>
-   + 인터넷은 어떻게 작동하는가 ? 
+    + 인터넷은 어떻게 작동하는가 ? 
 ___
 
