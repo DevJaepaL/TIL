@@ -1,4 +1,4 @@
-![](https://velog.velcdn.com/images/jaepal/post/abdf45c1-4235-45bd-b4e0-bd736855df1a/image.png)
+
 
 
 ## 인터넷이란 🌎 ?
