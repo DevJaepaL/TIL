@@ -1,6 +1,6 @@
 # Today I Learned 📘
 ```
-오늘 공부한것을 기록 합니다. 
+공부한 것을 기록 합니다. 
 ```
 ___
  
@@ -26,5 +26,6 @@ ___
  
  + <a href="https://github.com/DevJaepaL/TIL/tree/main/Computer%20Science"><b>`Computer Science`</b></a>
     + 인터넷은 어떻게 작동하는가 ? 🖥 
+    + HTTP 🌎
 ___
 
