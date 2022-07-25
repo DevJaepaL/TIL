@@ -27,6 +27,6 @@ ___
  + <a href="https://github.com/DevJaepaL/TIL/tree/main/Computer%20Science"><b>`Computer Science`</b></a>
     + 인터넷은 어떻게 작동하는가 ? 🖥 
     + HTTP 🌎
-    + 
+    + HTTPS 🛡
 ___
 
