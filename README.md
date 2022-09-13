@@ -10,6 +10,9 @@ ___
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JavaScript"><b>`JavaScript`</b></a>  
   + 자바스크립트 기초 정리
   
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
+  + SQL 기초 문법
+  
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)"><b>`유용한 정보,꿀팁 모음`</b></a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Back-End">Back-End</a>
     + 2021 백엔드 개발자 로드맵 (Velog) 🗺️
