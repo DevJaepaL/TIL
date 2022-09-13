@@ -1,49 +1,49 @@
-/* SELECT customer.custid , book.bookname
+SELECT customer.custid , book.bookname
 FROM Customer, Book, Orders
 WHERE Customer.custid = Orders.custid AND Orders.bookid = Book.bookid AND
-      Book.price >= 20000; */
+      Book.price >= 20000;
 
-/* µµ¼­¸¦ ±¸¸ÅÇÏÁö ¾ÊÀº °í°´À» Æ÷ÇÔÇÏ¿© °í°´ÀÇ ÀÌ¸§, ÁÖ¹® µµ¼­, µµ¼­ÀÇ °¡°İÀ» °Ë»öÇÏ¼¼¿ä. */      
---SELECT Customer.name, saleprice
---FROM Customer LEFT JOIN Orders
---                ON Customer.custid = Orders.custid;
+/* ë„ì„œë¥¼ êµ¬ë§¤í•˜ì§€ ì•Šì€ ê³ ê°ì„ í¬í•¨í•˜ì—¬ ê³ ê°ì˜ ì´ë¦„, ì£¼ë¬¸ ë„ì„œ, ë„ì„œì˜ ê°€ê²©ì„ ê²€ìƒ‰í•˜ì„¸ìš”. */      
+SELECT Customer.name, saleprice
+FROM Customer LEFT JOIN Orders
+                ON Customer.custid = Orders.custid;
 
-/* °¡Àå ºñ½Ñ µµ¼­ÀÇ ÀÌ¸§À» °Ë»öÇÏ¼¼¿ä. */
---SELECT bookname,price
---FROM book
---WHERE price=(SELECT MAX(price)
---            FROM Book);
+/* ê°€ì¥ ë¹„ì‹¼ ë„ì„œì˜ ì´ë¦„ì„ ê²€ìƒ‰í•˜ì„¸ìš”. */
+SELECT bookname,price
+FROM book
+WHERE price=(SELECT MAX(price)
+            FROM Book);
 
-/* µµ¼­¸¦ ±¸¸ÅÇÑ ÀûÀÌ ÀÖ´Â °í°´ÀÇ ÀÌ¸§À» °Ë»öÇÏ¼¼¿ä. */
--- SELECT name -- "name" ÇÊµå º¸±â
--- FROM customer -- "customer" Å×ÀÌºí¿¡¼­
--- WHERE custid IN (SELECT custid -- Orders Å×ÀÌºí¿¡ ÀÖ´Â custid °Ë»ö.
+/* ë„ì„œë¥¼ êµ¬ë§¤í•œ ì ì´ ìˆëŠ” ê³ ê°ì˜ ì´ë¦„ì„ ê²€ìƒ‰í•˜ì„¸ìš”. */
+ SELECT name -- "name" í•„ë“œ ë³´ê¸°
+ FROM customer -- "customer" í…Œì´ë¸”ì—ì„œ
+ WHERE custid IN (SELECT custid -- Orders í…Œì´ë¸”ì— ìˆëŠ” custid ê²€ìƒ‰.
                 -- FROM orders);
 
-/* "´ëÇÑ¹Ìµğ¾î"ÀÇ µµ¼­¸¦ ±¸¸ÅÇÑ °í°´ÀÇ ÀÌ¸§À» Ãâ·ÂÇÏ¼¼¿ä. */
---SELECT name
---FROM   Customer
---WHERE  custid IN (SELECT custid
---                  FROM   Orders
---                  WHERE  bookid IN (SELECT bookid
---                                    FROM   Book
---                                    WHERE  publisher='´ëÇÑ¹Ìµğ¾î'));
+/* "ëŒ€í•œë¯¸ë””ì–´"ì˜ ë„ì„œë¥¼ êµ¬ë§¤í•œ ê³ ê°ì˜ ì´ë¦„ì„ ì¶œë ¥í•˜ì„¸ìš”. */
+SELECT name
+FROM   Customer
+WHERE  custid IN (SELECT custid
+                  FROM   Orders
+                  WHERE  bookid IN (SELECT bookid
+                                    FROM   Book
+                                    WHERE  publisher='ëŒ€í•œë¯¸ë””ì–´'));
 
-/* "´ëÇÑ¹Ìµğ¾î"ÀÇ µµ¼­¸¦ ±¸¸ÅÇÏÁö ¾ÊÀº °í°´ÀÇ ÀÌ¸§À» Ãâ·ÂÇÏ¼¼¿ä. */
---SELECT name -- °í°´ÀÇ ÀÌ¸§ °Ë»ö.
---FROM   Customer -- °í°´ Å×ÀÌºí ÂüÁ¶.
---WHERE  custid IN (SELECT custid -- custid ÇÊµå¸¦ Orders Å×ÀÌºí¿¡ ÀÖ´Â custid ÇÊµå ÂüÁ¶.
---                  FROM   Orders
---                  WHERE  bookid  IN (SELECT bookid -- Orders Å×ÀÌºí¿¡ ÀÖ´Â bookid ÇÊµå ÂüÁ¶.
---                                    FROM   Book -- Book Å×ÀÌºí¿¡¼­ ÂüÁ¶.
---                                    WHERE  publisher != '´ëÇÑ¹Ìµğ¾î'));
---                                                     -- '´ëÇÑ¹Ìµğ¾î'°¡ ¾Æ´Ñ µµ¼­¸¦ ÂüÁ¶ÇÔ.
+/* "ëŒ€í•œë¯¸ë””ì–´"ì˜ ë„ì„œë¥¼ êµ¬ë§¤í•˜ì§€ ì•Šì€ ê³ ê°ì˜ ì´ë¦„ì„ ì¶œë ¥í•˜ì„¸ìš”. */
+SELECT name -- ê³ ê°ì˜ ì´ë¦„ ê²€ìƒ‰.
+FROM   Customer -- ê³ ê° í…Œì´ë¸” ì°¸ì¡°.
+WHERE  custid IN (SELECT custid -- custid í•„ë“œë¥¼ Orders í…Œì´ë¸”ì— ìˆëŠ” custid í•„ë“œ ì°¸ì¡°.
+                  FROM   Orders
+                  WHERE  bookid  IN (SELECT bookid -- Orders í…Œì´ë¸”ì— ìˆëŠ” bookid í•„ë“œ ì°¸ì¡°.
+                                    FROM   Book -- Book í…Œì´ë¸”ì—ì„œ ì°¸ì¡°.
+                                    WHERE  publisher != 'ëŒ€í•œë¯¸ë””ì–´'));
+                                                     -- 'ëŒ€í•œë¯¸ë””ì–´'ê°€ ì•„ë‹Œ ë„ì„œë¥¼ ì°¸ì¡°í•¨.
                                     
-/*  »ó°ü ºÎ¼ÓÁúÀÇ(Sub Query)¸¦ ÀÌ¿ëÇÏ¿© 
-    ÃâÆÇ»çº°·Î ÃâÆÇ»çÀÇ Æò±Õ µµ¼­ °¡°İº¸´Ù ºñ½Ñ µµ¼­¸¦ ±¸ÇÏ½Ã¿À. */
+/*  ìƒê´€ ë¶€ì†ì§ˆì˜(Sub Query)ë¥¼ ì´ìš©í•˜ì—¬ 
+    ì¶œíŒì‚¬ë³„ë¡œ ì¶œíŒì‚¬ì˜ í‰ê·  ë„ì„œ ê°€ê²©ë³´ë‹¤ ë¹„ì‹¼ ë„ì„œë¥¼ êµ¬í•˜ì‹œì˜¤. */
     
---SELECT  b1.bookname -- Book Å×ÀÌºíÀ» ÂüÁ¶ÇÑ b1.bookname °Ë»ö.
---FROM    Book b1 -- Book Å×ÀÌºíÀ» ÂüÁ¶ÇÑ b1 Å×ÀÌºí »ı¼º.
---WHERE   b1.price > (SELECT avg(b2.price)    -- b1.price°¡ b2.price(Æò±Õ°ª)º¸´Ù Å« °ª¸¸ °Ë»ö
---                    FROM    Book b2 -- Book Å×ÀÌºíÀ» ÂüÁ¶ÇÑ b2 Å×ÀÌºí »ı¼º.
---                    WHERE b2.publisher = b1.publisher); -- b2¿Í b1ÀÇ 'publisher' ÇÊµå ÂüÁ¶.
+SELECT  b1.bookname -- Book í…Œì´ë¸”ì„ ì°¸ì¡°í•œ b1.bookname ê²€ìƒ‰.
+FROM    Book b1 -- Book í…Œì´ë¸”ì„ ì°¸ì¡°í•œ b1 í…Œì´ë¸” ìƒì„±.
+WHERE   b1.price > (SELECT avg(b2.price)    -- b1.priceê°€ b2.price(í‰ê· ê°’)ë³´ë‹¤ í° ê°’ë§Œ ê²€ìƒ‰
+                    FROM    Book b2 -- Book í…Œì´ë¸”ì„ ì°¸ì¡°í•œ b2 í…Œì´ë¸” ìƒì„±.
+                    WHERE b2.publisher = b1.publisher); -- b2ì™€ b1ì˜ 'publisher' í•„ë“œ ì°¸ì¡°.
