@@ -1,4 +1,6 @@
-# 220914 DB(SQL) 과제 📜
+# 220914 DB(SQL) 📜
+
+<a href="https://github.com/DevJaepaL/TIL/blob/main/DB/220914/220914DB.sql">SQL 소스 코드 (github)</a>
 
  ## 개요 💡
 > #### SQL 문법을 활용하여 DB를 다뤄본다. 
