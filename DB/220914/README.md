@@ -1,6 +1,4 @@
-# 220914 DB(SQL) 📜
-
-<a href="https://github.com/DevJaepaL/TIL/blob/main/DB/220914/220914DB.sql">SQL 소스 코드 (github)</a>
+# 220914 DB(SQL) 과제 📜
 
  ## 개요 💡
 > #### SQL 문법을 활용하여 DB를 다뤄본다. 
@@ -12,7 +10,8 @@
 
 ## 문제 해결 🔑
 
-![](https://velog.velcdn.com/images/jaepal/post/e148475f-3c36-445c-bffe-0aeae26b9d4a/image.PNG)
+![](https://velog.velcdn.com/images/jaepal/post/9379929e-3d53-4c0e-a0fd-ee9cf1d173dc/image.PNG)
+
 
 
 일단 문제의 첫번째 조건인 **도서를 구매한 고객** 을 먼저 검색한다.
@@ -20,7 +19,8 @@
 
 <br>
 
-![](https://velog.velcdn.com/images/jaepal/post/c8d580aa-83e8-4655-9b73-a8806aa68454/image.PNG)
+![](https://velog.velcdn.com/images/jaepal/post/1ac974e1-3853-4c77-b727-f5c102c41f24/image.PNG)
+
 
 
 문제의 두번째 조건인 **'대한미디어'의 책을 구매하지 않은 고객** 의 이름을 검색 하였다.
