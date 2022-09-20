@@ -3,6 +3,7 @@
 
 ## 개요
 > #### `C` 를 이용해 원본 이미지(PBM)를 읽은 후 콘솔창에 수정된 이미지를 표시한다.
+<a href="https://github.com/DevJaepaL/TIL/blob/main/C/DataPreprocessing/ImageCopy.c">Source code(GitHub)</a>
 
 <br>
 
