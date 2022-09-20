@@ -1,4 +1,4 @@
-﻿#include <Windows.h>
+#include <Windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -299,9 +299,9 @@ int main(void) {
 	system("cls");
 	char imgPath[] = "frog.pbm";
 	img = readPBMImage(imgPath);
-	writeImage("frogCopy.pbm", img); 
-	
+
 	// Copy & Edit PBM Image.
+	writeImage("frogCopy.pbm", img);
 	char copyFileName[] = "frogCopy.pbm";
 	copyImg = readPBMImage(copyFileName);
 	DrawImage(copyImg);
