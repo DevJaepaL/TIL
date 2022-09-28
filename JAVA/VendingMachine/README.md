@@ -36,6 +36,7 @@
 
 
 ### 모듈 로드 및 전역 변수 선언
+
 ```java
 // 예외처리를 위한 모듈 로드
 import java.util.InputMismatchException;
