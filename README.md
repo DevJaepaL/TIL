@@ -4,7 +4,10 @@
 읽기 좋은, 개발자로 성장하기 위한 도움 되는 글들을 모아둡니다.
 ```
 ___
- 
+
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Algorithm"><b>`Algorithm`</b></a>  
+  + 소수 값 구하기
+
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/C"><b>`C`</b></a>  
   + 구조체 (Structure)
   + 데이터 전처리
