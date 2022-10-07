@@ -362,8 +362,11 @@ FROM Orders; -- Orders(주문) 테이블
 ## 마치며
 
 이번 게시글에서는 데이터 조작어의 조건 검색을 알아봤다.
-다음 검색 조건에서는ㅁ `GROUP BY` , `HAVING` , `JOIN` 등 어려운 문법이 나오는데.. 
+다음 검색 조건에서는 `GROUP BY` , `HAVING` , `JOIN` 등 어려운 문법이 나오는데.. 
 일단  이 게시물에 나오는 조건 검색들 먼저 연습을 차근차근 해봐야겠다. 😤
+
+<br>
+<br>
 
 ##### 참고 자료
 > <a href="https://namu.wiki/w/SQL/%EB%AC%B8%EB%B2%95">SQL / 문법 - namu.wiki</a>
