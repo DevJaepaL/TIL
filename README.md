@@ -16,9 +16,11 @@ ___
   + 자바스크립트 기초 정리
   
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
-   + SQL 기초 문제 - 1
    + SQL 문제 모음
+   + SQL 기초 문제 해결
    + SQL 기초 정리 - 1
+   + SQL 데이터 조작어 (2)
+   + SQL 데이터 조작어 (3)
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA"><b>`Java`</b></a> 
    + 개인 프로젝트 ( 음료 자판기 프로그램 )
