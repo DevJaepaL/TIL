@@ -27,6 +27,8 @@ ___
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow"><b>`TensorFlow`</b></a>
    + Mnist Machine Learning
+   + Mnist Fashion DataSet Learning
+   + IMDB Review DataSet Learning
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)"><b>`유용한 정보,꿀팁 모음`</b></a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Back-End">Back-End</a>
