@@ -5,3 +5,4 @@
 #### 22-09-15 ( 디렉터리 생성 )
 
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/mnist">Mnist Machine Learning</a>
+  + <a href="">IMDB Movie Review Learning</a>
