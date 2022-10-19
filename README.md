@@ -15,6 +15,9 @@ ___
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JavaScript"><b>`JavaScript`</b></a>  
   + 자바스크립트 기초 정리
   
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/Chapter01">`Python`</a>
+  + 파이썬이란 ?
+
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
    + SQL 문제 모음
    + SQL 기초 문제 해결
