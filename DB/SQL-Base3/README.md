@@ -1,11 +1,19 @@
+<<<<<<< Updated upstream
 # 데이터 조건 검색 2
+=======
+# SQL (4) - 데이터 조건 검색 2
+>>>>>>> Stashed changes
 ___
 
 ## 개요
 
+<<<<<<< Updated upstream
 데이터 조작어중 `GROUP BY` , `HAVING` , `JOIN` , `부속질의(Sub Query) 를 알아 봅시다.
 
 또한 예제 문제들을 풀어봤어요 ! 🕵🏻‍♂️
+=======
+데이터 조작어중 `GROUP BY` , `HAVING` , `JOIN` 절을 알아 봅시다 !
+>>>>>>> Stashed changes
 
 <br>
 
@@ -24,11 +32,16 @@ SQL 문에서 `GROUP BY` 절을 사용 하면 같은 속성 값 끼리 그룹을
 > 고객별로 주문한 도서의 총수량과 총판매액을 구하세요.
 
 ```sql
+<<<<<<< Updated upstream
 SELECT custid, count(*) AS 도서수량 , SUM(saleprice)
+=======
+SELECT custid, count(*) AS 도서수량 , SUM(saleprice) 
+>>>>>>> Stashed changes
 FROM Orders
 GROUP BY custid; -- custid 가 같은 컬럼값 그룹화
 ```
 
+<<<<<<< Updated upstream
 <br>
 
 ** 결과 **
@@ -803,3 +816,6 @@ HAVING		avg(o.saleprice) > (SELECT	avg(saleprice)
 ##### 참고 자료
 > <a href="https://araikuma.tistory.com/509">arikuma Blog - tistory</a>
 > <a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B8231888617">오라클로 배우는 DB 개론과 실습 - 박우창</a>
+=======
+
+>>>>>>> Stashed changes
