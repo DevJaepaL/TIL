@@ -94,6 +94,8 @@ print("나도 프로그래밍 해보고 싶어요 !")
 
 #### 참고 자료
 
-> <a href="https://library.gabia.com/">https://library.gabia.com/ - 가비아 라이브러리</a>
+> <a href="https://library.gabia.com/">library.gabia.com - 가비아 라이브러리</a>
+> 
 > <a href="https://wikidocs.net/43">wikidocs.net - 위키독스</a>
+> 
 > <a href="https://www.python.org/">python.org - 파이썬 공식 홈페이지</a>
