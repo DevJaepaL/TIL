@@ -12,7 +12,7 @@ ___
     + 프론트엔드 취준생을 위한 포스트 / 자료 모음 📄 (Velog)
     + 프론트엔드 역사와 미래, 업무 분야 ... 그리고 잘하는 프론트엔드 개발자란? 👨🏻‍🚀 (Velog)
 
-+ <a href="">Information</a>
++ <a href=""><b>Information</b></a>
     + 다양한 기업의 기술 블로그들 🖼 (Velog) 
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Portfolio"><b>Portfolio</b></a>
