@@ -26,8 +26,7 @@ ___
    + SQL 데이터 조작어 (2)
    + SQL 데이터 조작어 (3)
 
-+ <a href="https://github.com/DevJaepaL/TIL/tree/main/Diary"><b>`Diary`</b></a>
-  + 개발 일지
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Diary"><b>`개발 일지 (Dev Diary)`</b></a>
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA"><b>`Java`</b></a> 
    + 개인 프로젝트 ( 음료 자판기 프로그램 )
