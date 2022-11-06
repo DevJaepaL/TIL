@@ -1,4 +1,4 @@
-# Python 🐍
+# Python 공부 일지 🐍
 
 ```python
 >>> print("Hello World !")
@@ -6,7 +6,5 @@ Hello World !
 >>>
 ```
 
-이 디렉터리는 파이썬 관련 디렉터리 입니다. <br>
-파이썬의 기초나 문법 , 간단한 프로젝트를 커밋합니다.
-
-+ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/Chapter01">파이썬 소개 ( Introduce Python )</a>
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/Chapter01">Ch.1 파이썬 소개 ( Introduce Python )</a>
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/Chapter02">Ch.2 변수, 출력, 데이터 표현 단위</a>

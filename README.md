@@ -15,8 +15,9 @@ ___
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JavaScript"><b>`JavaScript`</b></a>  
   + 자바스크립트 기초 정리
   
-+ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python">`Python`</a>
-  + 파이썬이란 ?
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python"><b>`Python`</b></a>
+  + Ch.1 파이썬이란 ?
+  + Ch.2 변수, 출력문, 데이터 표현 단위
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
    + SQL 문제 모음
@@ -24,6 +25,8 @@ ___
    + SQL 기초 정리 - 1
    + SQL 데이터 조작어 (2)
    + SQL 데이터 조작어 (3)
+
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Diary"><b>`개발 일지 (Dev Diary)`</b></a>
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA"><b>`Java`</b></a> 
    + 개인 프로젝트 ( 음료 자판기 프로그램 )
@@ -43,7 +46,7 @@ ___
     + 프론트엔드 취준생을 위한 포스트 / 자료 모음 📄 (Velog)
     + 프론트엔드 역사와 미래, 업무 분야 ... 그리고 잘하는 프론트엔드 개발자란? 👨🏻‍🚀 (Velog)
 
-+ <a href="">Information</a>
+  + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Information">Information</a>
     + 다양한 기업의 기술 블로그들 🖼 (Velog) 
 
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Portfolio">Portfolio</a>
