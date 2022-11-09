@@ -1,5 +1,7 @@
 ## mnist 손글씨 훈련 시각화 (mnistVisualization)
 
+<a href="https://github.com/DevJaepaL/TIL/blob/main/TensorFlow/mnistVisualization/mnistDataVisualization.py">Source Code</a>
+
 손글씨 인식 학습 및 훈련 데이터를 그래프로 시각화 해봤습니다.
 기존의 코드로 짜기에 버거워 자료를 찾고 새롭게 코드를 짜봤습니다.
 
