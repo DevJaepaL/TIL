@@ -16,7 +16,8 @@ ___
   + 자바스크립트 기초 정리
   
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Python"><b>`Python`</b></a>
-  + 파이썬이란 ?
+  + Ch.1 파이썬이란 ?
+  + Ch.2 변수, 출력문, 데이터 표현 단위
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
    + SQL 문제 모음
@@ -24,6 +25,8 @@ ___
    + SQL 기초 정리 - 1
    + SQL 데이터 조작어 (2)
    + SQL 데이터 조작어 (3)
+
++ <a href="https://github.com/DevJaepaL/TIL/tree/main/Diary"><b>`개발 일지 (Dev Diary)`</b></a>
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA"><b>`Java`</b></a> 
    + 개인 프로젝트 ( 음료 자판기 프로그램 )
