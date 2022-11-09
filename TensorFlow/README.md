@@ -5,3 +5,4 @@
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/mnist">Mnist Machine Learning</a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/mnist_fashion">Mnist Fashions Data Learning</a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/IMDB">IMDB Movie Review Learning</a>
+  + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/mnistVisualization">Mnist Data Visualization</a>
