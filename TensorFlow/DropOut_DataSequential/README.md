@@ -1,6 +1,6 @@
 # 데이터 증강 & 드롭아웃 모델 적용
 
-<a href="">소스 코드(GitHub)</a>
+<a href="https://github.com/DevJaepaL/TIL/blob/main/TensorFlow/DropOut_DataSequential/FlowerCategory.py">소스 코드(GitHub)</a>
 
 CNN 모델을 통해 꽃 이미지 분류를 한다.
 CNN 모델 개선을 두 가지의 방법을 이용하여 결과 비교 분석을 한다. 
