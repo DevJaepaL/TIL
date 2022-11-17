@@ -14,7 +14,7 @@
 
 + 무기별 **탄약 수 제한**
 + 무기별 **발사개수가 다르며 발사개수 만큼 적 HP가 감소한다.**
-+ 무기를 바꾸면 **탄약은 다시 채워져야 한다. **
++ 무기를 바꾸면 **탄약은 다시 채워져야 한다.**
 
 ## Flow 🌊
 
@@ -455,19 +455,30 @@ catch (InputMismatchException e) {
 
 + 입력 시 행동
   + [0] 번 입력 시 보스에게 총을 쏴 데미지를 입힌다.
-![](https://velog.velcdn.com/images/jaepal/post/65ae327d-377c-4741-a675-05960d1baa96/image.PNG)
+  
+  ![](https://velog.velcdn.com/images/jaepal/post/65ae327d-377c-4741-a675-05960d1baa96/image.PNG)
+  
   + [1] 번 입력 시 기본 권총을 선택한다.
+  
   ![](https://velog.velcdn.com/images/jaepal/post/eab8aa62-07b1-41b2-b75f-c551ff5cd509/image.PNG)
+  
   + [2] 번 입력 시 리볼버를 선택한다.
+  
   ![](https://velog.velcdn.com/images/jaepal/post/f1899f29-4401-4306-9f91-7252002b1c8e/image.PNG)
+  
   + [3] 번 입력 시 자동 소총을 선택한다.
+  
   ![](https://velog.velcdn.com/images/jaepal/post/a2252739-a0bf-4f4c-9bbe-cf6aff239e80/image.PNG)
+  
   + [4] 번 입력 시 핸드 캐넌을 선택한다.
+  
   ![](https://velog.velcdn.com/images/jaepal/post/0b8e9f04-8adc-4539-b159-b56d1b41ba22/image.PNG)
+  
   + [5] 번 입력 시 ** `Player 1` 또는 `Player 2` 로 교체** 된다.
+  
   ![](https://velog.velcdn.com/images/jaepal/post/8b82151c-652b-42cd-8726-ce4eddacd3dc/image.PNG)
 
-여기서 총을 선택`[1-4 번 입력]` 할 때 마다 무기의 탄약이 자동으로 충전된다.
+  여기서 총을 선택`[1-4 번 입력]` 할 때 마다 무기의 탄약이 자동으로 충전된다.
 
 #### 보스 처치 시
 
