@@ -445,6 +445,7 @@ catch (InputMismatchException e) {
 
 + 1번 입력시 게임이 시작된다.
 + 2번 입력시 프로그램이 종료된다.
+
 ![](https://velog.velcdn.com/images/jaepal/post/36311bb7-fa9d-4dc1-b030-5556a9145dde/image.PNG)
     
 ### 게임 시작 시
@@ -474,7 +475,7 @@ catch (InputMismatchException e) {
   
   ![](https://velog.velcdn.com/images/jaepal/post/0b8e9f04-8adc-4539-b159-b56d1b41ba22/image.PNG)
   
-  + [5] 번 입력 시 ** `Player 1` 또는 `Player 2` 로 교체** 된다.
+  + [5] 번 입력 시 **`Player 1` 또는 `Player 2` 로 교체** 된다.
   
   ![](https://velog.velcdn.com/images/jaepal/post/8b82151c-652b-42cd-8726-ce4eddacd3dc/image.PNG)
 
@@ -490,7 +491,7 @@ catch (InputMismatchException e) {
 ## 코드를 완성하며 느낀 점 💭
 
 이번 콘솔 게임을 설계하고 작성하며 객체 지향에 점점 익숙해져 갔다. 
-**슈퍼클래스 및 서브클래스의 상호작용 개념**과 `super()` 의 사용법, 각 클래스의 메소드를 어디서 호출해야 코드를 간결하게 표시할 수 있을지 고민하고 또 고민했다.
+**슈퍼클래스 및 서브클래스의 상호작용 개념** 과 `super()` 의 사용법, 각 클래스의 메소드를 어디서 호출해야 코드를 간결하게 표시할 수 있을지 고민하고 또 고민했다.
 
 메인 메소드를 더욱 간결하게 표현하고 싶었는데, 현재 내 지식으로 최대한 간결하게 짜봤다.
 이 코드에서 개선해야할 부분은 **상속 할 때 오버라이딩을 활용 못한 점**, `instanceof`를 적절히 사용했는 지 피드백을 듣고 싶다. 또한 이 코드에서의 문제점이 무엇인지 다른 분들께 피드백을 받고 싶다.
