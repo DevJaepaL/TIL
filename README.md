@@ -25,6 +25,7 @@ ___
    + SQL 기초 정리 - 1
    + SQL 데이터 조작어 (2)
    + SQL 데이터 조작어 (3)
+   + DB 프로젝트
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Diary"><b>`개발 일지 (Dev Diary)`</b></a>
 
