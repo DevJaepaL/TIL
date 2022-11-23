@@ -72,6 +72,7 @@ public class Game {
 
                 else if (inputNum == 2) {
                     System.out.println("게임을 종료 합니다.");
+                    sc.close();
                     break;
                 }
 
