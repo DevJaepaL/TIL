@@ -10,14 +10,11 @@ public class Container {
     int conNum;
     Scanner sc = new Scanner(System.in);
 
-    public Container() {
-    
-    }
+    public Container() {}
 
-    public Container(String registPetName, String masterName, String petType) {
+    public Container(String registPetName, String masterName) {
         this.registPetName = registPetName;
         this.masterName = masterName;
-        this.petType = petType;
     }
 
     void CurrentPetInfo(String mName, String pName, String pType) {
@@ -29,25 +26,25 @@ public class Container {
         System.out.println("펫 종류 : " + petType);
     }
 
-    void RegistPet(String mName, String pName, String type) {
-        System.out.println("펫을 등록합니다.");
-        System.out.print("펫 종류를 입력하세요 [강아지 or 고양이] : ");
-        type = sc.nextLine();        
-        System.out.print("펫 이름을 입력하세요 : ");
-        pName = sc.nextLine();
-        System.out.print("주인 이름을 입력하세요 : ");
-        mName = sc.nextLine();
-        if(type == "강아지") {
-            con.add(new Dog(mName, pName, type));
-            System.out.println(type + "등록 완료 !");
+    int RegistPet(String mName, String pName, int type) {
+        if(type == 1) {
+            String petType = "강아지";
+            con.add(new Dog(mName, pName));
+            System.out.println("\"" + petType + "\" 등록 완료 !");  
+            CurrentPetInfo(mName, pName, petType);
         }
-        else if (type == "고양이") {
-            con.add(new Cat(mName, pName, type));
-            System.out.println(type + "등록 완료 !");
+        else if (type == 2) {
+            String petType = "고양이";
+            con.add(new Cat(mName, pName));
+            System.out.println("\"" + petType + "\" 등록 완료 !");  
+            CurrentPetInfo(mName, pName, petType);
         }
         else {
-            System.out.println("입력 값 오류 ! ");
+            System.out.println("입력 값 오류 ! 숫자 \"1\" 또는 \"2\"로 다시 입력해주세요.");
         }
+
+        return 0;
+
     }
 
     int AllOutPet() {
@@ -61,15 +58,17 @@ public class Container {
 
 
 class Dog extends Container {
-    public Dog(String registPetName, String masterName, String petType) {
-        super(registPetName, masterName, petType);
+    String petType = "강아지";
+    public Dog(String registPetName, String masterName) {
+        super(registPetName, masterName);
         CurrentPetInfo(registPetName, masterName, masterName);
     }
 }
 
 class Cat extends Container {
-    public Cat(String registPetName, String masterName, String petType) {
-        super(registPetName, masterName, petType);
+    String petType = "고양이";
+    public Cat(String registPetName, String masterName) {
+        super(registPetName, masterName);
         CurrentPetInfo(registPetName, masterName, masterName);
     }
 }

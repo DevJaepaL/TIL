@@ -11,9 +11,9 @@ public class UI {
 
     void SelectMenu() {
         System.out.println("==  Select Menu  ==");
-        System.out.println("[1] 강아지 등록");
-        System.out.println("[2] 고양이 등록");
-        System.out.println("[3] 펫 내보내기");
+        System.out.println("[1] 펫을 컨테이너에 등록");
+        System.out.println("[2] 펫을 컨테이너에서 내보내기");
+        System.out.println("[3] 펫 모두 내보내기");
         System.out.println("[4] 초기 메뉴로 돌아가기");
         System.out.print("숫자를 입력 하세요  >>> ");
     }
