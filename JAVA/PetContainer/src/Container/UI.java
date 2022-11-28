@@ -13,8 +13,9 @@ public class UI {
         System.out.println("==  Select Menu  ==");
         System.out.println("[1] 펫을 컨테이너에 등록");
         System.out.println("[2] 펫을 컨테이너에서 내보내기");
-        System.out.println("[3] 펫 모두 내보내기");
-        System.out.println("[4] 초기 메뉴로 돌아가기");
+        System.out.println("[3] 현재 펫 목록 보기");
+        System.out.println("[4] 펫 모두 내보내기");
+        System.out.println("[5] 초기 메뉴로 돌아가기");
         System.out.print("숫자를 입력 하세요  >>> ");
     }
 }
