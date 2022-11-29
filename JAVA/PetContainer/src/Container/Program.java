@@ -20,7 +20,6 @@ public class Program {
                     while (mainNum != 5) 
                     {
                         int petType;
-                        int containNum;
                         String petName;
                         String masterName;
                         menu.SelectMenu();
@@ -43,12 +42,11 @@ public class Program {
                                 System.out.println("펫을 컨테이너에서 꺼내줍니다.");
                                 System.out.print("등록하셨던 주인 이름을 입력하세요 : ");
                                 masterName = sc.nextLine();
-                                System.out.print("등록하셨던 펫 이름을 입력하세요 : ");
-                                petName = sc.nextLine();
+                                con.LeavePet(masterName);
                                 break;
                             case 3:
                                 con.ShowPetList();
-                                break;
+                                break;                                
                             case 4:
                                 con.AllLeavePet();
                                 break;
@@ -56,7 +54,8 @@ public class Program {
                                 System.out.println("초기 메뉴로 돌아갑니다.");
                                 break;
                             default:
-                                System.out.println("입력 값 오류 . .");
+                                System.out.println("입력 값 오류 ! 숫자 [1-5]만 입력하세요.\n");
+
                                 break;
                         }
                     }
@@ -65,7 +64,7 @@ public class Program {
                     sc.close();
                     break;
                 } else {
-                    System.out.println("입력 값 오류. 다시 입력하세요.");
+                    System.out.println("입력 값 오류. 다시 입력하세요.\n");
                 }
             }
         } catch (InputMismatchException e) {
