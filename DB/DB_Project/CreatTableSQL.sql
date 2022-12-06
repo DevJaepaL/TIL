@@ -1,84 +1,15 @@
-# 데이터베이스 프로젝트 시작 (22/11/28)
+-- MySQL Workbench Forward Engineering
 
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-## 11/28
+-- -----------------------------------------------------
+-- Schema IoTService
+-- -----------------------------------------------------
 
-+ 주어진 스토리보드에 맞는 데이터 베이스 설계
-+ 설계된 데이터베이스 대하여 보고서 작성
-   + 보고서 내 필요한 내용
-      + 학번 이름 필수
-      + 서비스 분석
-      + ER 다이어그램
-      + IE 표기법
-      + 설계 테이블, 프로시저, 함수, 트리거 설명
-      + 각 화면에서 사용될 SQL 문
-      + 설계 검증
-      + 고찰
-
-### 서비스할 제품의 구성
-
-![01](./Image/01.PNG)
-
-> IoT 실내공장관리 App
-실내 공장 관리 서비스로써 사용자들이 모바일을 통해 제어 및 관리 할 수 있다.
-
-+ 고객은 여러 대의 IoT 디바이스를 구매하여 관리할 수 있다.
-+ 제품은 화단과 화분으로 구성되며 화단은 여러 개의 화분을 포함한다.
-+ 화단은 수조, 산소공급기, UV램프를 관리한다.
-+ 화분은 온도, 습도와, 수분량을 모니터링하며, 히터, 팬, 가습기, 조명, 물공급을 제어한다.
-
-### 서비스(요구사항) 분석
-
-1. IoT 앱을 사용하려면 고객의 회원가입이 필요하다.
-가입을 위해서는 **고객의 이름, 이메일 주소, 비밀번호**가 필요함.
-2. **고객은 여러 대의 IoT 디바이스 제품을 구매하여 관리** 할 수 있다. 제품에는 **화단과 화분**으로 구성되있다.
-3. **화단은 여러 개의 화분**을 포함한다.
-   + 화단은 **수조, 산소공급기, UV램프를 관리**한다.
-   + 화단 추가 시 화단코드와 화단 이름이 필요하다.
-   + 화단 재배 설정에 필요한 기능이다.
-      + 자동재배 기능(On , Off)
-      + 수조밸브 최소,최대 길이 설정 기능
-      + 산소 공급기의 동작주기, 시간 설정 기능
-      + UV 램프의 동작주기, 시간 설정 기능
-4. 화분은 **히터, 팬, 가습기, 조명, 물공급을 제어**한다.
-   + 화분의 조회기간을 검색하여 해당 날짜의 온도, 습도와 수분량의 조회 기능이 필요하다.
-   + 화분 추가 시 화분 코드, 화분 이름, 식물 종류, 심은 날짜가 필요하다.
-   + 화분 재배 설정에 필요한 기능이다.
-      + 자동재배 기능(On, Off)
-      + 화분의 최소,최대 온도 설정 기능
-      + 습도의 최소,최대 온도 설정 기능
-      + 조도의 켜지는 시각,꺼지는 시각 설정 기능
-      + 조도의 동작조도, 동작주기, 동작시간 설정 기능
-
-
-## 12/06
-
-### E-R 다이어그램 작성
-
-스토리보드를 토대로 E-R 다이어그램을 작성했다.
-
-![ERD](./Image/ERDIMG.PNG)
-
-
-1. 유저 `Table` 에는 **회원번호(Pk)**, 이름, 이메일, 비밀번호 컬럼이 존재한다.
-2. 화단 `Table` 에는 **화단코드(Pk)**, **회원번호(Fk)**, 화단이름 컬럼이 존재하며 유저 테이블과 1 : N 관계를 갖고 있다. 즉 **1명의 유저가 여러개의 화단을 구매할 수 있다는 것**이다.
-3. 화단 제어 정보 `Table`에는 **제어 ID(Pk)** ,**화단코드(Fk)**, 수조 밸브 조작 여부와 조작 날짜, UV 램프 조작 여부와 조작 날짜, 산소 공급기 조작 여부와 조작 날짜 컬럼이 존재한다. 조작 날짜 컬럼의 존재 이유는 유저에게 마지막으로 조작(업데이트)한 날짜를 알려주기 위함이다. 
-**화단 제어 정보 테이블은 화단 테이블과 1 : N 관계를 갖고 있다. 1개의 화단은 화단 제어 정보 여러 개를 가질 수 있는 것**이다.
-4. 화단 재배 설정 `Table`에는 **설정 ID(Pk)**, **화단 코드(Fk)**, 자동 재배 여부(Boolean), UV램프의 동작주기와 시간, 산소공급기의 동작주기와 시간, 수조 밸브의 최소 최대 길이 컬럼이 존재한다.
-화단 재배 설정 테이블은 화단 테이블과 1 : 1 관계를 갖고 있다. **화단 한 개마다 화단 제어 재배 설정 정보는 하나만 존재**할 수 있다.
-5. 화분 `Table` 에는 **화분코드(Pk)**, **화단 코드(Fk)**, 화분 이름, 식물 종류, 심은 날짜 컬럼이 존재한다. 화분 테이블은 화단 테이블과 N : 1 관계이다.
-**화단 하나에 여러 개의 화분이 존재할 수 있다. 반대로 화분 하나는 여러 대의 화단을 가질 수 없다.**
-6. 화분 제어 정보 `Table`에는 **제어 ID(Pk)**, **화분 코드(Fk)**, 물 공급 여부, LED 조작 여부, 가습기 조작 여부, 히터 조작 여부, 팬 조작 여부 (전부 Boolean) 컬럼이 존재하며 이 역시 화단 테이블과 1 : N 관계를 갖고 있다.
-화단 하나에 제어 정보 여러개를 가질 수 있다.
-7. 화분 제배 정보 `Table`에는 **설정 ID(Pk)**, **화분 코드(Fk)**, 자동 재배 여부(Boolean), 최소 최대 온도, 최소 최대 습도, 조도의 켜지는 시각과 꺼지는 시각, 동작 조도, 동작 주기와 시간 컬럼이 존재한다. **화단 재배 설정 테이블과 화단 테이블은 1 : 1 관계를 가질 수 있으며 화단 하나에 재배 설정이 하나만 존재**할 수 있다.
-
-### IE 표기법
-
-![IE](./Image/ERD.png)
-
-### 테이블 생성
-
-```sql
+-- -----------------------------------------------------
+-- Schema IoTService
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `IoTService` DEFAULT CHARACTER SET utf8 ;
 USE `IoTService` ;
@@ -86,6 +17,7 @@ USE `IoTService` ;
 -- -----------------------------------------------------
 -- Table `IoTService`.`Customer`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`Customer` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`Customer` (
   `CustomerID` INT NOT NULL COMMENT '고객고유번호',
@@ -99,6 +31,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `IoTService`.`FlowerBed`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`FlowerBed` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerBed` (
   `FlowerBedID` INT NOT NULL COMMENT '화단고유ID',
@@ -117,6 +50,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `IoTService`.`FlowerPot`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`FlowerPot` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerPot` (
   `FlowerPotID` INT NOT NULL COMMENT '화분고유ID',
@@ -137,6 +71,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `IoTService`.`FlowerBed_PlantSetting`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`FlowerBed_PlantSetting` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerBed_PlantSetting` (
   `BedSettingID` INT NOT NULL COMMENT '화단설정고유ID',
@@ -161,6 +96,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `IoTService`.`FlowerPot_PlantSetting`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`FlowerPot_PlantSetting` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerPot_PlantSetting` (
   `PotSettingID` INT NOT NULL COMMENT '화분설정고유ID',
@@ -189,6 +125,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `IoTService`.`FlowerPot_ControlInfo`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`FlowerPot_ControlInfo` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerPot_ControlInfo` (
   `PotControlSetID` INT NOT NULL COMMENT '화분제어고유ID',
@@ -202,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerPot_ControlInfo` (
   `LED_Info` INT(1) NULL COMMENT 'LED설정',
   `LED_ControlDATE` TIMESTAMP NOT NULL COMMENT 'LED설정날짜',
   `Fan_Info` INT(1) NULL COMMENT '팬설정',
-  `Fan_ControlDATE` TIMESTAMP NOT NULL COMMENT '팬설정날짜',
+  `Fan_ControlDATE` TIMESTAMP NOT NULL DEFAULT CURRENTTIMESTAMP COMMENT '팬설정날짜',
   INDEX `fk_FlowerPot_ControlInfo_FlowerPot1_idx` (`FlowerPotID` ASC) VISIBLE,
   PRIMARY KEY (`PotControlSetID`),
   CONSTRAINT `fk_FlowerPot_ControlInfo_FlowerPot1`
@@ -216,6 +153,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `IoTService`.`FlowerBed_ControlInfo`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `IoTService`.`FlowerBed_ControlInfo` ;
 
 CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerBed_ControlInfo` (
   `BedControlSetID` INT NOT NULL COMMENT '화단 제어 ID',
@@ -234,4 +172,8 @@ CREATE TABLE IF NOT EXISTS `IoTService`.`FlowerBed_ControlInfo` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-```
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
