@@ -1,7 +1,175 @@
-# Java Basics
+# Java Basics ☕
 
-`Java` 및 `OOP`의 기초 개념을 잡아볼까요. 🤜
+`Java` 및 `OOP`의 개념들을 잡아볼까요. 🤜
 
+## WORA
+
+> Write Once, Run Anywhere
+
++ 컴퓨터에 따라 다른 코드를 작성해야 했던 `Assembly` 와 다르게 `Java`는 컴퓨터가 다랄도 통일된 코드를 실행할 수 있다는 장점을 나타내기 위해 제작됐다.
+
+### Byte Code
+
+바이트 코드는 고급 언어로 작성된 소스 코드를 가상머신이 이해할 수 있는 중간 코드로 컴파일 한 것을 의미한다. 
+
+자바 바이트 코드는 `JVM` 이 이해할 수 있는 언어로 변환된 자바 소스 코드를 의미한다.
+자바 컴파일러에 의해 변환되는 코드의 명령어 크기는 1바이트라서 자바 바이트 코드라고 불린다. 자바 바이트 코드는 `JVM` 만 설치 돼있다면 어떤 운영체제에서도 실행이 가능하다.
+
+### JVM(Java Virtual Machine)
+
+![jvm](https://images.velog.io/images/getbrain/post/31cd708d-8150-407a-a128-a6ba89ee8281/jvm.png)
+
+자바 가상 머신은 자바 바이트 코드를 실행시키기 위한 가상의 기계이다. `Java`로 작성된 모든 프로그램은 자바 가상 머신에서만 실행될 수 있으므로 자바 프로그램을 실행하기 위해선 JVM이 설치 되어야 한다.
+
+## `Java` 네이밍 규칙
+
+개발 시 , 혼자 개발하는 것이 아니라면 다른 개발자들로 하여금 보기 좋은 코드를 짜야한다.
+`Java`는 변수, 메소드 명의 선언 규칙이 존재한다.
+
+1. **대소문자가 구분**이 되며, 길이에 제한이 없다.
+예) `Num` 과 `num`은 다른 변수 및 메소드이다.
+2. **예약어**를 사용하면 안된다.
+예) `int , float, String continue, for` 등등..
+3. **숫자로 시작**하면 안된다.
+4. 최대한 가독성이 높아보이도록 선언한다.
+	+ 충분한 목적이 보이도록 선언 : `int s` -> `int sum` -> `int sumNumber`
+    + 줄임말 보다는 의미가 확실하게 선언 : `CalcSys` -> `CalculatorSystem`
+5. 클래스 이름
+	+ `Java`에서 클래스 선언 시 첫 번째 문자는 대문자로 시작한다.
+    ```java
+    class Cat {}
+    public class Program {}
+    ```
+6. 변수 및 메소드 이름
+	+ 첫 단어를 제외한 각 단어의 첫 번째 문자는 대문자로 시작한다.
+    ```java
+    protected String catName;
+    int catAge;
+    public void catInfo() {...}
+    ```
+7. 상수 선언 시
+	+ 모든 문자를 대문자로 표기한다.
+    ```java
+    final static double PI = 3.141592;
+    ```
+    
+## 데이터 타입 💾
+
+**기본 타입**
++ `boolean` : 1 bit
++ `char` : 2 byte
++ `byte` : 1 byte
++ `short` : 2 byte
++ `int` : 4 byte
++ `long` : 8 byte
++ `float` : 4 byte
++ `double` : 8 byte
+
+> ※ **`Java` 에서 문자열인 `String`은 기본 타입**이 아니다.
+> `String` 클래스로 존재한다.
+
+**레퍼런스 타입**
+
++ 배열(Array) 에 대한 레퍼런스
++ 클래스(Class) 에 대한 레퍼런스
++ 인터페이스(Interface) 에 대한 레퍼런스
+
+## `Scanner`
+
++ `System.in`
+	+ 키보드로부터 직접 읽는 자바의 표준 스트림이다.
+    + 키 값을 바이트로 리턴한다.
+   	+ 키 값을 **바이트 데이터로 넘겨주므로 응용프로그램이 문자 정보로 변환**해야 한다.
+
++ `Scanner` 클래스
+	+ `System.in` 에게 키를 읽게하고 읽은 바이트를 문자, 정수, 실수, bool, 문자열 등 다양한 타입으로 변환하여 리턴해주는 클래스이다.
+
+
+```java
+import java.util.Scanner;	// 라이브러리 Import 필요
+
+Scanner sc = new Scanner(System.in) // Scanner 객체 생성
+```
+
+## `Array`
+
++ **배열(Array)**
+  + 인덱스와 인덱스에 대응하는 데이터들로 이루어진 자료구조이다.
+  + 배열을 이용하면 한 번에 많은 메모리 공간 할당이 가능하다.
+  + 같은 타입의 데이터들이 순차적으로 저장 가능하다.
+    + `[1, 2, 3, 4, . . . . 10]`
+    + `[1.01, 1.33, 52.11, 33.23]`
+        
++ **배열 Index**
+  + 다른 언어와 마찬가지로 0에서부터 시작된다.
+  + 인덱스는 배열의 시작 위치에서부터 데이터가 있는 상대적 위치이다.
+
+배열의 선언과 생성은 다음과 같다.
+```java
+/* 배열 선언 */
+int numArray []; 
+char charArray [];
+// 또는
+int [] numArray;
+char [] charArray;
+
+/* 배열 생성 */
+numArray = new int[10];
+charArray = new char[10];
+// 또는
+int numArray[] = new int[10];
+char charArray[] = new char[10];
+```
+
+생성과 동시에 값 초기화도 가능하다.
+```java
+int numArray[] = {1,2,3,4,5};
+```
+
+### 2차원 배열
+
+![matrix](https://cdn.programiz.com/sites/tutorial2program/files/java-2d-array.jpg)
+
+기존 배열이 1열로 된 공간이라면 2차원 배열은 행과 열로 구성 돼있다.
+2차원 배열의 선언은 아래와 같이 가능하다.
+
+```java
+// 2차원 배열 선언
+int[][] numArray;
+char[][] charArray;
+
+// 2차원 배열 생성
+numArray = new int[5][5]; // 5x5 행열을 가진 int 배열
+charArray = new char[5][5]; // 5x5 행열을 가진 char 배열
+```
+
+## 접근 지정자
+
+접근 지정자는 객체 지향의 **캡슐화 , 상속** 등을 지키기 위해 필요한 존재다. 상속으로 클래스 간에 접근 범위를 제어하기 위해서 중요하다. `Java`에는 총 4가지의 접근 지정자가 존재한다.
+
++ `public`
+다른 모든 클래스의 접근을 허용한다.
+```java
+public class Main { . . . }
+```
+
++ `default`
+  + 접근 지정자가 없을 경우 기본값인 지정자이다.
+  + 같은 패키지의 클래스만 접근 허용이 가능하다.
+
++ `protected`
+  + 같은 패키지 내의 다른 모든 클래스의 접근 허용이 가능하다. 
+  + 상속 받은 서브 클래스는 다른 패키지에 있어도 접근 가능하다.
+  
++ `private`
+  + 동일 클래스 내에만 접근 허용 가능하다. 상속 받은 서브 클래스에서 접근 불가하다.
+
+| 접근 지정자  | 적용 대상  | 접근 가능   | 접근 불가   |
+|-----|-----|-----|-----|
+|`public`   |클래스, 멤버 변수, 생성자, 메소드   |모든 대상   | X   |
+|`protected`   |멤버 변수, 생성자, 메소드   | 같은 패키지 , 자식 클래스   | 다른 패키지에 속한 클래스  |
+|`default`   |클래스, 멤버 변수, 생성자 , 메소드   | 같은 패키지에 속한 클래스   | 다른 패키지에 속한 클래스   |
+|`private`   |멤버 변수 , 생성자 , 메소드   | 클래스 내부   | 클래스 외부   |
 
 ## 객체 지향 프로그래밍
 
@@ -93,27 +261,109 @@ class Box<T> {
 
 ![](https://velog.velcdn.com/images/jaepal/post/41eaf9b5-6743-4eb2-bc57-80a42cf18ac8/image.png)
 
+> 객체지향의 핵심 3가지 **클래스** , **객체** , ** 인스턴스** 
 
-## 객체
+### 클래스
 
-## WORA
+클래스란, **객체**를 만들어내기 위한 설계도이다. **클래스의 내부에는 객체를 생성하기 위한 변수와 메소드가 집합**해있다. 자동차 설계도를 `Java`로 표현해보겠다.
 
-> Write Once, Run Anywhere
+```java
+class Car {
+	private String carBrand;
+	private int carFuel;
+    private int carSpeed;
+    
+    int speeedDown() {...}
+    int speedUp() {...}
+    void setCarName() {...}
+}
+```
 
-+ 컴퓨터에 따라 다른 코드를 작성해야 했던 `Assembly` 와 다르게 `Java`는 컴퓨터가 다랄도 통일된 코드를 실행할 수 있다는 장점을 나타내기 위해 제작됐다.
+`Car` 클래스 내부에는 `기름 , 자동차 속도`가 변수로 존재하며 메소드로는 자동차의 속도를 제어하는 메소드와 자동차 이름을 표시해주는 메소드가 존재한다.
 
-### Byte Code
+이처럼 **클래스는 객체의 설계도**라 보면 된다.
 
-바이트 코드는 고급 언어로 작성된 소스 코드를 가상머신이 이해할 수 있는 중간 코드로 컴파일 한 것을 의미한다. 
+### 객체
 
-자바 바이트 코드는 `JVM` 이 이해할 수 있는 언어로 변환된 자바 소스 코드를 의미한다.
-자바 컴파일러에 의해 변환되는 코드의 명령어 크기는 1바이트라서 자바 바이트 코드라고 불린다. 자바 바이트 코드는 `JVM` 만 설치 돼있다면 어떤 운영체제에서도 실행이 가능하다.
+> 사전적 정의 : 세상에 실제로 존재하는 것
 
-### JVM(Java Virtual Machine)
+**객체(Object)**란 객체 지향 언어에서 클래스에 정의된 내용이 메모리에 생성된 것을 의미한다. 일반적으로 객체는 다수의 속성과 기능을 가지고 있으며 객체가 가지고 있는 속성과 그 기능을 멤버라고 부른다. **클래스에서 실제로 생성된 객체를 인스턴스(Instance)** 라고 칭한다.
 
-![jvm](https://images.velog.io/images/getbrain/post/31cd708d-8150-407a-a128-a6ba89ee8281/jvm.png)
+클래스를 이용하여 객체를 만드는 방법은 총 두 가지다.
+1. 클래스 변수 선언 -> 변수에 `new` 연산자를 사용하여 클래스 생성
+2. 클래스 변수의 선언과 동시에 `new` 연산자를 사용하여 클래스 생성
 
-자바 가상 머신은 자바 바이트 코드를 실행시키기 위한 가상의 기계이다. `Java`로 작성된 모든 프로그램은 자바 가상 머신에서만 실행될 수 있으므로 자바 프로그램을 실행하기 위해선 JVM이 설치 되어야 한다.
+코드로 표현하면,
+```java
+// 1번 방법
+Car myCar;
+myCar = new Car();
+
+// 2번 방법
+Car myCar = new Car();
+```
+
+상단에서 생성한 `Car` 클래스를 메인 메소드에서 표현해보자.
+```java
+public class Main {
+	public static void main(String args[]) {
+    	Car audi = new Car();	// Car 클래스의 인스턴스인 audi
+        audi.showCarName("Audi");
+        
+        Car hyundai = new Car(); // Car 클래스의 인스턴스인 hyundai
+        hyundai.showCarName("Hyundai");
+        
+        Car volvo = new Car();	// Car 클래스의 인스턴스인 volvo
+        volvo.showCarName("Volvo");
+    }
+}
+```
+
+`Car` 라는 클래스를 통해 객체(인스턴스)를 총 3개를 구현했다.
+`audi` , `hyundai` , `volvo` 가 메인 메소드에 존재한다는 뜻이다.
+
+## 생성자(Constructor)
+
+생성자란 `new` 연산자를 통해 **클래스의 인스턴스를 생성할 때 반드시 호출되며 제일 먼저 실행되는 메소드의 일종**이다. 여기서 주의할 점은 생성자가 메소드는 아니다. **생성자는 클래스 내 멤버 변수들을 초기화** 시키는 역할을 해준다.
+
+모든 클래스의 기본 생성자는 이처럼 정의한다.
+```java
+public Car() {}
+public Driver() {}
+```
+
+생성자는 기본적으로 리턴 타입이 없으며, 클래스 이름과 같다. 매개 변수는 생략 가능하며 여러 개의 생성자 생성이 가능하다.
+```java
+class Car {
+	public Car(String carBrand, String carName, int carSpeed) {
+     . . .
+    }
+    
+    public Car(String carName) {. . .}
+    
+    public car() {} // 기본 생성자
+}
+```
+
+### `this`
+
+`this` 는 객체 자신을 의미한다.
+`this`는 주로 **생성자와 메소드의 매개변수 이름이 멤버변수와 동일한 경우, 인스턴스 멤버의 멤버 변수(필드)라는 것을 알리고자** 할 때 사용한다. 
+
+또한 멤버 변수와 매개 변수의 이름이 같을 때 생성자 내부에서는 해당 멤버 변수에 접근할 수 없기 때문에 `this` 를 사용한다. 아래 코드로 예시를 확인해보자.
+```java
+class User {
+	String userName; // 멤버변수(필드)
+    
+    void setUserName(String userName) {
+    	this.userName = userName;
+        // this.userName => 멤버 변수
+        // userName => 매개 변수
+    }
+}
+```
+
+이런 식으로 메소드, 생성자의 참조 변수가 멤버 변수 이름과 같더라도 `this`를 이용하여 같이 사용할 수 있다.
 
 ## 메소드(Method)
 
@@ -154,136 +404,14 @@ public class Main {
 
 `main()`문은 저 규칙을 반드시 지켜야만 한다.
 
-## `Java` 네이밍 규칙
-
-개발 시 , 혼자 개발하는 것이 아니라면 다른 개발자들로 하여금 보기 좋은 코드를 짜야한다.
-`Java`는 변수, 메소드 명의 선언 규칙이 존재한다.
-
-1. **대소문자가 구분**이 되며, 길이에 제한이 없다.
-예) `Num` 과 `num`은 다른 변수 및 메소드이다.
-2. **예약어**를 사용하면 안된다.
-예) `int , float, String continue, for` 등등..
-3. **숫자로 시작**하면 안된다.
-4. 최대한 가독성이 높아보이도록 선언한다.
-	+ 충분한 목적이 보이도록 선언 : `int s` -> `int sum` -> `int sumNumber`
-    + 줄임말 보다는 의미가 확실하게 선언 : `CalcSys` -> `CalculatorSystem`
-5. 클래스 이름
-	+ `Java`에서 클래스 선언 시 첫 번째 문자는 대문자로 시작한다.
-    ```java
-    class Cat {}
-    public class Program {}
-    ```
-6. 변수 및 메소드 이름
-	+ 첫 단어를 제외한 각 단어의 첫 번째 문자는 대문자로 시작한다.
-    ```java
-    protected String catName;
-    int catAge;
-    public void catInfo() {...}
-    ```
-7. 상수 선언 시
-	+ 모든 문자를 대문자로 표기한다.
-    ```java
-    final static double PI = 3.141592;
-    ```
-    
-## 데이터 타입
-
-**기본 타입**
-+ `boolean` : 1 bit
-+ `char` : 2 byte
-+ `byte` : 1 byte
-+ `short` : 2 byte
-+ `int` : 4 byte
-+ `long` : 8 byte
-+ `float` : 4 byte
-+ `double` : 8 byte
-
-> ※ **`Java` 에서 문자열인 `String`은 기본 타입**이 아니다.
-> `String` 클래스로 존재한다.
-
-**레퍼런스 타입**
-
-+ 배열(Array) 에 대한 레퍼런스
-+ 클래스(Class) 에 대한 레퍼런스
-+ 인터페이스(Interface) 에 대한 레퍼런스
-
-## `Scanner`
-
-+ `System.in`
-	+ 키보드로부터 직접 읽는 자바의 표준 스트림이다.
-    + 키 값을 바이트로 리턴한다.
-   	+ 키 값을 **바이트 데이터로 넘겨주므로 응용프로그램이 문자 정보로 변환**해야 한다.
-
-+ `Scanner` 클래스
-	+ `System.in` 에게 키를 읽게하고 읽은 바이트를 문자, 정수, 실수, bool, 문자열 등 다양한 타입으로 변환하여 리턴해주는 클래스이다.
-
-
-```java
-import java.util.Scanner;	// 라이브러리 Import 필요
-
-Scanner sc = new Scanner(System.in) // Scanner 객체 생성
-```
-
-## `Array`
-
-+ **배열(Array)**
-  + 인덱스와 인덱스에 대응하는 데이터들로 이루어진 자료구조이다.
-  + 배열을 이용하면 한 번에 많은 메모리 공간 할당이 가능하다.
-  + 같은 타입의 데이터들이 순차적으로 저장 가능하다.
-    + `[1, 2, 3, 4, . . . . 10]`
-    + `[1.01, 1.33, 52.11, 33.23]`
-        
-+ **배열 Index**
-  + 다른 언어와 마찬가지로 0에서부터 시작된다.
-  + 인덱스는 배열의 시작 위치에서부터 데이터가 있는 상대적 위치이다.
-
-배열의 선언과 생성은 다음과 같다.
-```java
-/* 배열 선언 */
-int numArray []; 
-char charArray [];
-// 또는
-int [] numArray;
-char [] charArray;
-
-/* 배열 생성 */
-numArray = new int[10];
-charArray = new char[10];
-// 또는
-int numArray[] = new int[10];
-char charArray[] = new char[10];
-```
-
-생성과 동시에 값 초기화도 가능하다.
-```java
-int numArray[] = {1,2,3,4,5};
-```
-
-### 2차원 배열
-
-![matrix](https://cdn.programiz.com/sites/tutorial2program/files/java-2d-array.jpg)
-
-기존 배열이 1열로 된 공간이라면 2차원 배열은 행과 열로 구성 돼있다.
-2차원 배열의 선언은 아래와 같이 가능하다.
-
-```java
-// 2차원 배열 선언
-int[][] numArray;
-char[][] charArray;
-
-// 2차원 배열 생성
-numArray = new int[5][5]; // 5x5 행열을 가진 int 배열
-charArray = new char[5][5]; // 5x5 행열을 가진 char 배열
-```
-
-## 예외처리
+## 예외처리 ⚠️
 
 > 정의 : 프로그램 실행 시 발생할 수 있는 예외의 발생에 대비한 코드를 작성 하는 것
 > 목적 : 프로그램의 비정상 종료를 막으며 정상적인 실행상태를 유지하기 위함.
 
 **개발자와 프로그램의 주적은 오류**다. 자바에서는 프로그램 실행 시 발생할 수 있는 오류를 **`에러(Error)`** 와 **`예외(Exception)`** 으로 구분한다.
 
-### `Error`
+### `Error` ⛔
 
 대표적인 에러의 예시는 아래와 같다.
 + 메모리가 부족해 하드웨어에 영향을 줄 수 있는 에러 `메모리 부족(OutOfMemoryError)`
@@ -352,8 +480,14 @@ finally {
 }
 ```
 
-try 문 내부에서 예외 발생 시
+**try 문 내부에서 예외 발생 시**
 + `catch` 문 실행
 
-try 문 내부에서 예외 발생이 없을 시
+**try 문 내부에서 예외 발생이 없을 시**
 + 그대로 `try` 문 내의 코드들이 작동한다.
+
+<br>
+
+# 마치며
+
+자바와 객체 지향의 기초 개념을 정리해봤다. 정리하며 많은 사이트들의 자료를 찾아보고 참고하다보니 다른 언어로의 표현법도 접했는데 `C#`이 `Java`와 상당히 유사한 점을 알았다. 사실 이번 게시글에서 입출력문 , 조건문, 반복문의 사용법도 작성하고 싶었는데 이 게시물에서 작성해봤자 큰 의미가 없다고 생각했다. 😶
