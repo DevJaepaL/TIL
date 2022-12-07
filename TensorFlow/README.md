@@ -7,3 +7,4 @@
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/IMDB">IMDB Movie Review Learning</a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/mnistVisualization">Mnist Data Visualization</a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/DropOut_DataSequential">Mnist DropOut & Data Sequential</a>
+  + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow/Reference">Reference</a>
