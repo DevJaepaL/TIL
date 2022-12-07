@@ -31,17 +31,27 @@ ___
    + DB 프로젝트
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Diary"><b>`개발 일지 (Dev Diary)`</b></a>
+   + 221103
+   + 221104
+   + 221107
+   + 221119
+   + 221207
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA"><b>`Java`</b></a> 
-   + 개인 프로젝트 ( 음료 자판기 프로그램 )
+   + 개인 프로젝트 (음료 자판기 프로그램)
    + 슈팅 콘솔 게임
+   + Pet Container
+   + HashMap
+   + Java & OOP 핵심 내용 정리 ☕
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/TensorFlow"><b>`TensorFlow`</b></a>
+   + DropOut DataSequential
    + Mnist Machine Learning
    + Mnist Fashion DataSet Learning
    + IMDB Review DataSet Learning
    + Mnist Data Visualization
    + Mnist DropOut & Data Sequential
+   + Reference Info
    
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)"><b>`유용한 정보,꿀팁 모음`</b></a>
   + <a href="https://github.com/DevJaepaL/TIL/tree/main/Useful%20Info(%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EC%A0%95%EB%B3%B4%20)/Back-End">Back-End</a>
