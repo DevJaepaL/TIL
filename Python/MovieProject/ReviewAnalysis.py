@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 from wordcloud import wordcloud
 from konlpy.tag import Okt
 
-# 파일 읽기
-df = pd.read_table('./data/movie_aisw.csv')
+# 1. 파일 읽어오기
+df = pd.read_table('Python\MovieProject\data\movie_aisw.csv')
 print(df)
 df.info()
 print(df.dtypes)
