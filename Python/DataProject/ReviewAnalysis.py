@@ -7,7 +7,7 @@ from wordcloud import WordCloud
 from konlpy.tag import Okt
 
 # 1. 파일 읽어오기
-df = pd.read_csv('Python/MovieProject/data/movie_aisw.csv')
+df = pd.read_csv('Python/DataProject/data/movie_aisw.csv')
 
 # 2. 데이터 탐색(구성과 데이터 타입 확인)
 print(df.info())

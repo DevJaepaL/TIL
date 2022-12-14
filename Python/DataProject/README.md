@@ -23,7 +23,7 @@ from wordcloud import WordCloud
 from konlpy.tag import Okt
 
 # 1. 파일 읽어오기
-df = pd.read_csv('Python/MovieProject/data/movie_aisw.csv')
+df = pd.read_csv('Python\DataProject\data\movie_aisw.csv')
 ```
 해당 사항을 작성하기 위한 라이브러리들을 불러온다.
 그 후, 주어진 csv 파일을 `pandas`를 이용해 로드한다.
@@ -180,7 +180,7 @@ plt.show()
 
 ### 결과
 
-![](./Result/WordCloud.png)
+![](./ResultIMG/Figure_1.png)
 
 ## 7. 영화 리뷰수가 두번째로 많은 영화의 분석 및 워드 클라우드 생성 (1-6번 과정 반복)
 
@@ -280,6 +280,6 @@ movie                    sentence  score
 
 ## 결과
 
-![](./Result/WacandaWordCloud.png)
+![](./ResultIMG/Figure_1.png)
 
 # 환경 데이터 분석
