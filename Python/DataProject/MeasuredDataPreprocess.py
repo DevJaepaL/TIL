@@ -26,3 +26,12 @@ df['Date'] = pd.to_datetime(df['Date'],
                             errors='coerce')
 print(df['Date'])
 
+# 5. 결측치 확인 및 처리
+print(df.isnull().sum()) # 결측치 확인
+df = df.dropna(how='any') # NaN 값 모두 삭제후 새로운 데이터프레임 생성
+print(df.isnull().sum())
+
+# 6. 상관계수 함수를 이용하여 요소 별 상관관계 분석
+corr_df = df.corr() # 상관계수 데이터 프레임 생성
+corr_df = corr_df.apply(lambda x: round(x,2)) # 가독성을 위한 소수점 제거
+print(corr_df)
