@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # 1. 파일 읽어오기
 df = pd.read_csv('Python/DataProject/data/measuredData.csv')
@@ -35,3 +36,17 @@ print(df.isnull().sum())
 corr_df = df.corr() # 상관계수 데이터 프레임 생성
 corr_df = corr_df.apply(lambda x: round(x,2)) # 가독성을 위한 소수점 제거
 print(corr_df)
+
+# 7. 히스토그램(도수분포표) 시각화
+from pandas.plotting import scatter_matrix
+scatter_matrix(corr_df)
+plt.show()
+
+# 8. 막대그래프로 일별 현황 그래프 출력
+
+# 9. 히트맵으로 상관관계 시각화
+
+# 9. 산점도 그래프로 온도와 미세먼지(PM10) 확인
+
+# 11. 미세먼지(PM10)과 초 미세먼지(PM2.5) 관계를 산점도 그래프로 확인
+
