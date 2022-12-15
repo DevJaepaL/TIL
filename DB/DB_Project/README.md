@@ -372,6 +372,15 @@ where email = 'wocks3254@gmail.com';
 
 ![](./Image/SQL_02.PNG)
 
+또한 테이블 생성시에 만들어 뒀던 프로시저를 사용하면 더 쉽게 사용 가능하다.
+```sql
+call Insert_cust('qwe10102@gmail.com','고구마','goguma');
+select * from customer;
+```
+**결과**
+
+![](./Image/SQL_proce.PNG)
+
 이후에 로그인 시 해당 값을 입력 받으면 `SELECT` 문이 실행된다. 다음 쿼리문과 같다.
 ```sql
 SELECT Email, Passwd
@@ -409,3 +418,12 @@ select * from flowerbed order by cust_ID
 ### 화분 추가 화면
 
 ![](./Image/UI_7.PNG)
+
+사용자 입력 시 DBMS에서 전달받아 `INSERT`문으로 데이터를 저장한다.
+
+```sql
+-- 식물 등록
+-- 식물 종류 : 0 = Flower, 1 = Crop, 2= Tree
+insert into flowerpot(FlowerPotID, bed_ID, FlowerName, FlowerRegDate, Plant_Type)
+values(2002,1000,'튤립','2002-01-04',0)
+```
