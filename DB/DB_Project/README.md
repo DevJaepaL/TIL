@@ -152,7 +152,6 @@
     + `Lux_Value` : **INT**
     + `Cycle_Min` : **INT**
     + `Cycle_Sec` : **INT**
-    + `Plant_DATE` : **DATE**
 2. **화단 재배 설정 테이블과 화단 테이블은 1 : 1 관계를 가질 수 있으며 화단 하나에 재배 설정이 하나만 존재**할 수 있다.
 
 ### 테이블 생성 SQL 문
@@ -427,3 +426,49 @@ select * from flowerbed order by cust_ID
 insert into flowerpot(FlowerPotID, bed_ID, FlowerName, FlowerRegDate, Plant_Type)
 values(2002,1000,'튤립','2002-01-04',0)
 ```
+
+
+```sql
+ALTER TABLE `iotservice`.`flowerbed_plantsetting` 
+CHANGE COLUMN `BedSettingID` `BedSettingID` INT NOT NULL AUTO_INCREMENT ;
+```
+
+```sql
+INSERT INTO flowerbed_plantsetting(Bed_ID_fk,AutoPlant, Valve_MIN,Valve_MAX, AirCycle_Min,
+									AirCycle_Sec,UVRampCycle_Min,UVRampCycle_Sec)
+VALUES(1000,0,40,80,30,60,15,30)
+```
+
+```sql
+ALTER TABLE `iotservice`.`flowerpot_controlinfo` 
+CHANGE COLUMN `PotControlSetID` `PotControlSetID` INT NOT NULL AUTO_INCREMENT COMMENT '화분제어고유ID' ;
+```
+
+```sql
+ALTER TABLE `iotservice`.`flowerpot_plantsetting` 
+CHANGE COLUMN `PotSettingID` `PotSettingID` INT NOT NULL AUTO_INCREMENT COMMENT '화분설정고유ID' ;
+```
+
+```python
+ALTER TABLE `iotservice`.`flowerbed_controlinfo` 
+CHANGE COLUMN `Valve_ControlDATE` `Valve_ControlDATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '밸브설정날짜' ,
+CHANGE COLUMN `UVRamp_ControlDATE` `UVRamp_ControlDATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'UV램프설정날짜' ,
+CHANGE COLUMN `AirSupply_ControlDATE` `AirSupply_ControlDATE` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '산소공급기설정날짜' ;
+```
+
+```sql
+ALTER TABLE `iotservice`.`flowerbed_controlinfo` 
+CHANGE COLUMN `BedControlSetID` `BedControlSetID` INT NOT NULL AUTO_INCREMENT COMMENT '화단 제어 ID' ;
+```
+
+```sql
+insert into flowerbed_controlinfo(flowerbed_BedID_fk,Valve_Info,UV_Ramp_Info,AirSupply_Info)
+values(1000, 0, 1, 0)
+```
+
+```sql
+insert into flowerpot_plantsetting(pot_ID,AutoPlant, Temperature_MIN, Temperature_MAX,
+								Humidity_MIN, Humidity_MAX, IlluminationTIME_ON, IlluminationTIME_OFF,
+                                Lux_Value, Cycle_Min, Cycle_Sec)
+values(25,0,15,30,40,60,'09:00:00','19:00:00',20000,30,30)
+``
