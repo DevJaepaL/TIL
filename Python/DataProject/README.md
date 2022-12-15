@@ -1,3 +1,5 @@
+> **프로젝트** 💡 : 주어진 요구사항으로 2개의 데이터를 **분석** 하고 **데이터 시각화**를 해야한다.
+
 # 영화별 리뷰 분석
 
 `movie_aisw.csv` 파일 이용하여 다음과 같은 사항을 작성한다.
@@ -180,7 +182,9 @@ plt.show()
 
 ### 결과
 
-![](./ResultIMG/Figure_1.png)
+![](https://velog.velcdn.com/images/jaepal/post/0a663871-8a26-489e-9ce1-525cfa1f31ef/image.png)
+
+
 
 ## 7. 영화 리뷰수가 두번째로 많은 영화의 분석 및 워드 클라우드 생성 (1-6번 과정 반복)
 
@@ -255,7 +259,7 @@ plt.imshow(cloud)
 plt.show()
 ```
 
-### 2 번째로 많은 데이터를 찾은 과정
+### 2번째로 많은 데이터를 찾은 과정
 
 ```python
 df_groupby = df.groupby('movie').count()
@@ -264,6 +268,8 @@ print(df_groupby_sort)
 ```
 
 1-3 번 과정은 기존 영화 분석 코드와 같지만 4번 과정에서 **리뷰수가 2번 째로 많은 데이터를 확인**하기 위해 `GroupBy`로 데이터들을 묶어준 후 `sort_values`를 이용해 값들을 정렬해줬다.
+
+**정렬 후**
 
 ```python
 movie                    sentence  score
@@ -280,24 +286,25 @@ movie                    sentence  score
 
 ## 결과
 
-![](./ResultIMG/Figure_1.png)
+![](https://velog.velcdn.com/images/jaepal/post/b691fa25-d525-404f-99b0-8b1981c464b4/image.png)
+
 
 # 환경 데이터 분석
 
 `measuredData.csv` 파일을 이용하여 **환경 데이터를 분석**한다.
 
 1. 파일 읽어오기
-2. 기본 정보 및 기초 통계량 확인
-3. 한글 컬럼명 영문명으로 변경
-4. 데이터 타입 변경
-5. 결측치 확인 및 처리
-6. 상관계수 함수를 이용하여 요소 별 상관관계 분석
-7. 히스토그램으로 시각화
-8. 막대그래프로 일별 현황 그래프 출력
-9. 히트맵으로 상관관계 시각화
-10. 산점도 그래프로 온도화 미세먼지(PM10) 확인
-11. 미세먼지(PM10)과 초미세먼지(PM2.5) 관계를 산점도 그래프로 확인
-12. 데이터 분석 정리
+2. **기본 정보** 및 **기초 통계량** 확인
+3. 한글 컬럼명 **영문명**으로 **변경**
+4. **데이터 타입 변경**
+5. **결측치** 확인 및 처리
+6. 상관계수 함수를 이용하여 요소 별 **상관관계 분석**
+7. **히스토그램**으로 시각화
+8. 막대그래프로 **일별 현황 그래프 출력**
+9. 히트맵으로 **상관관계 시각화**
+10. 산점도 그래프로 **온도화 미세먼지(PM10) 확인**
+11. **미세먼지(PM10)과 초미세먼지(PM2.5) 관계**를 산점도 그래프로 확인
+12. **데이터 분석 정리**
 
 ## 1. 파일 읽어오기
 
@@ -385,14 +392,15 @@ print(df.dtypes) # 데이터 타입 확인
 먼저 각 컬럼들의 데이터 타입 확인을 위해 `dtypes` 함수를 이용했다.
 
 ```python
-Date               object
-Sulfurous         float64
-Carbon            float64
-Ozone             float64
-Nitrogen          float64
-PM10              float64
-PM2.5             float64
-Temperture(°C)    float64
+>>>
+    Date               object
+    Sulfurous         float64
+    Carbon            float64
+    Ozone             float64
+    Nitrogen          float64
+    PM10              float64
+    PM2.5             float64
+    Temperture(°C)    float64
 ```
 
 `Date` 컬럼을 제외한 나머지 컬럼은 정상적인 데이터 타입인 것을 확인했다. `Date` 컬럼 같은 경우 `object` 타입이므로, `datetime` 타입으로 변경해줘야 한다.
@@ -425,7 +433,8 @@ Name: Date, Length: 744, dtype: datetime64[ns]
 여기서 나는 한 가지 궁금증이 있었다. datetime 같은 경우엔, 2021-10-31 24:00 가 존재할 수 없다는 것이다.
 그 이유는 2021-10-30 24:00 와 2021-10-31 00:00 는 같은 시간이다. 이것을 확인한 후 `pd.to_datetime()` 함수의 `errors='coerce'`가 아닌 `raise`를 넣어 오류가 나오는 지 확인했다.
 
-![](./ResultIMG/%EC%97%90%EB%9F%AC.PNG)
+![](https://velog.velcdn.com/images/jaepal/post/8badeabc-045a-4c1f-94ff-9fa898fde13e/image.PNG)
+
 
 역시나! 에러가 발생했다. 24시는 올바르지 않은 형식이다. 이를 해결하기 위해 
 
@@ -446,11 +455,12 @@ print(df['Date'])
 
 함수를 만들어 시간이 **'24'** 가 아닐 경우  datetime 타입으로 바뀌도록 하였고, 이 외에 값은 24시 이기 때문에, `timeDelta`를 이용하여 시간을 00시로 바꾸고 일수를 증가하도록 시도를 해봤다.
 
-![](./ResultIMG/%EC%97%90%EB%9F%AC2.PNG)
+![](https://velog.velcdn.com/images/jaepal/post/4135bad3-f575-401a-84cb-39f8adbc3eb3/image.PNG)
+
 
 계속 값을 바꿔봐도 문제가 발생했다.
 
-일단 결측치 값이 생각보다 크지 않으니 기존 코드로 진행했다.
+일단 결측치 값이 데이터 분석에 영향을 줄 정도로 크지 않으니 기존 코드로 진행했다.
 
 ## 5. 결측치 확인 및 처리
 
@@ -465,7 +475,8 @@ print(df.isnull().sum()) # 재출력
 
 **결과**
 
-![](./ResultIMG/%EA%B2%B0%EC%B8%A1%EC%B9%98.PNG)
+![](https://velog.velcdn.com/images/jaepal/post/c2d47de4-c842-4df5-af50-353ec3bdcd5d/image.PNG)
+
 
 결측 값 수
 
@@ -505,18 +516,30 @@ Temperture(°C)       0.06   -0.17   0.44     -0.30 -0.03  -0.03            1.00
 ## 7. 히스토그램 시각화
 
 ```python
-import seaborn as sns
+# 7. 히스토그램 시각화
+columns = ['Sulfurous', 'Carbon', 'Ozone', 
+        'Nitrogen', 'PM10', 'PM2.5', 'Temperature(°C)']
+plt.figure(figsize=(10,10))
+for i in range(len(columns)):
+        plt.hist(df[columns[i]], color='orange')
+        plt.subplot(3,3, i+1)
+        plt.title(columns[i])
 
-sns.set(style='whitegrid', context='notebook')
-sns.pairplot(df.corr(), height=2.0)
 plt.show()
 ```
-
-`seaborn` 라이브러리를 이용해, 그리드 형태로 각 데이터의 열을 조합하여 산점도와 같은 데이터가 만나는 대각선 영역에 히스토그램을 그리도록 했다.
+일단 각 컬럼별 시각화를 원할하게 하기위해 컬럼명들을 배열화했다.
+```python
+columns = ['Sulfurous', 'Carbon', 'Ozone', 
+        'Nitrogen', 'PM10', 'PM2.5', 'Temperature(°C)']
+```
+그 후, 배열의 길이까지 반복하여 각 컬럼들을 `hist` 함수를 사용하여 변경해줬고 `subplot`에도 값을 지정해서 한 화면에 한번에 출력되도록 설정했다.
 
 **결과**
 
-![](./ResultIMG/%EC%83%81%EA%B4%80%EA%B4%80%EA%B3%84%ED%9E%88%EC%8A%A4%ED%86%A0%EA%B7%B8%EB%9E%A8.png)
+![](https://velog.velcdn.com/images/jaepal/post/0452eed5-adc9-4486-b939-b7caea325b0f/image.png)
+
+
+이 히스토그램을 통해서 어느 지수의 값이 제일 많은지 확인할 수 있다.
 
 ## 8. 막대그래프로 일별 현황 그래프 출력
 
@@ -538,6 +561,8 @@ print(newGroup)
 ```
 
 새로만든 데이터프레임에 같은 날짜끼리 그룹화 후, 온도의 평균값을 구해줬다. 그 후에 중복 날짜인 데이터 값을 제거하기 위해 `df.drop_duplicates` 함수를 이용해 제거해줬다.
+
+여기서 다른 컬럼의 값을 보고싶다면 `Temperature(°C)` 값을 다른 컬럼명으로 변경해주면 된다. **예를 들면 `PM10`으로 변경하면 일일병 미세먼지의 평균값**을 볼 수 있다.
 
 **결과**
 
@@ -597,18 +622,43 @@ ax.xaxis.set_major_locator(dates.DayLocator()) # 4일 간격의 눈금 1일별�
 plt.show()
 ```
 이 코드를 작성 안하고 컴파일 시
-![](./ResultIMG/%EC%9D%BC%EB%B3%84%ED%98%84%ED%99%A94%EC%9D%BC%EA%B0%84%EA%B2%A9.png)
+![](https://velog.velcdn.com/images/jaepal/post/fd380f29-5eb6-4e49-800c-f202e31c5450/image.png)
+
 
 X축의 눈금 간격이 4일간격으로 나왔다. 표현하고자 하는 것은 일일 별 현황이기 때문에 그래프에 1일 간격으로 나와야만 했다.
 그래서 
 ```python
 from matplotlib import dates
+ax = plt.gca()
+ax.xaxis.set_major_locator(dates.DayLocator())
 ```
 dates 라이브러리를 로드하여 `DayLocator` 함수로 1일간격으로 출력할 수 있도록 했다.
 
 **결과**
 
-![](./ResultIMG/%EC%9D%BC%EB%B3%84%ED%98%84%ED%99%A9%20%EC%98%A8%EB%8F%84%20%EA%B7%B8%EB%9E%98%ED%94%84.png)
+![](https://velog.velcdn.com/images/jaepal/post/e0e73b0a-4e54-4b23-9fdb-7848c775e834/image.png)
+
+
+상기에 설명한 일일 미세먼지 평균량도 구해봤다.
+
+```python
+# 년,월,일 그룹화 후, 미세먼지 평균 수치 새로운 컬럼 추가
+group_df['Mean'] = group_df.groupby(['Date'])['PM10'].transform("mean")
+```
+
+![](https://velog.velcdn.com/images/jaepal/post/5183dec9-8561-47cc-aff0-a62e1f08b235/image.png)
+
+
+해당 그래프를 분석해보면 **2021-10-26일에 미세먼지 평균치가 제일 높았다**는 것을 확인할 수 있다.
+
+```python
+group_df['Mean'] = group_df.groupby(['Date'])['PM10'].transform("max")
+```
+`max`를 이용하여 평균값이 아닌 일일별 최대 미세먼지량도 볼 수 있었다.
+
+**결과**
+![](https://velog.velcdn.com/images/jaepal/post/7dd51fff-f488-4479-aafd-a1eceedd7f22/image.png)
+
 
 ## 9. 히트맵으로 상관관계 시각화
 
@@ -624,7 +674,8 @@ plt.show()
 
 **결과**
 
-![](./ResultIMG/HeatMap.png)
+![](https://velog.velcdn.com/images/jaepal/post/c8ad892b-a9af-4896-90ac-cfaa4a5a506a/image.png)
+
 
 ## 10. 산점도 그래프로 온도와 미세먼지(PM10) 확인
 
@@ -654,8 +705,7 @@ ax.legend(loc='upper left')
 plt.show()
 ```
 **결과**
-
-![](./ResultIMG/%EC%82%B0%EC%A0%90%EB%8F%84%20%EA%B7%B8%EB%9E%98%ED%94%84-1.png)
+![](https://velog.velcdn.com/images/jaepal/post/fe9e7cad-90f4-4295-bf04-88a98f357e66/image.png)
 
 회귀직선의 형태가 분명하지 않아, 사실상 상관관계가 존재하지 않다고 볼 수 있다.
 
@@ -685,12 +735,12 @@ plt.show()
 ```
 
 **결과**
+![](https://velog.velcdn.com/images/jaepal/post/660634f7-e199-4fb7-b4a7-1c9b3bada201/image.png)
 
-![](./ResultIMG/%EC%82%B0%EC%A0%90%EB%8F%84%20%EA%B7%B8%EB%9E%98%ED%94%84-2.png)
 
-미세먼지와 초미세먼지는 회귀직선이 직선형태를 띄고있으므로 매우 강력한 상관관계다. 
+미세먼지와 초미세먼지는 회귀직선이 직선형태를 띄고있으므로 **매우 강력한 상관관계**다. 
 
-## 12. 데이터 분석 정리
+## 12. 데이터 분석 정리 📈
 
 **전체 코드**
 
@@ -733,9 +783,15 @@ corr_df = df.corr() # 상관계수 데이터 프레임 생성
 corr_df = corr_df.apply(lambda x: round(x,2)) # 가독성을 위한 소수점 제거
 print(corr_df)
 
-# 7. 히스토그램(도수분포표) 시각화
-sns.set(style='whitegrid', context='notebook')
-sns.pairplot(df.corr(), height=2.0)
+# 7. 히스토그램 시각화
+columns = ['Sulfurous', 'Carbon', 'Ozone', 
+        'Nitrogen', 'PM10', 'PM2.5', 'Temperature(°C)']
+plt.figure(figsize=(10,10))
+for i in range(len(columns)):
+        plt.hist(df[columns[i]], color='orange')
+        plt.subplot(3,3, i+1)
+        plt.title(columns[i])
+
 plt.show()
 
 # 8. 막대그래프로 일별 현황 그래프 출력
@@ -813,10 +869,28 @@ plt.show()
 ```
 
 분석한 데이터들의 결과를 정리 해보겠다.
-+ 해당 데이터는 2021년 10월 1일부터 10월 31일까지의 각 시간별 대기오염지수와 기온이 있는 데이터임을 알 수 있었다.
-+ 결측치를 제거하는 과정에서 결측 데이터가 상당히 많았음을 확인 할 수 있었다.
++ **해당 데이터는 2021년 10월 1일부터 10월 31일까지의 각 시간별 대기오염지수와 기온이 담겨있는 데이터**임을 알 수 있었다.
++ 결측치를 제거하는 과정에서 결측 데이터가 상당히 많았음을 확인 할 수 있었다. (총 데이터 수 : 738 개, 결측 데이터 수 : 대략 32 개)
++ 데이터를 분석하는 과정에서 해당 데이터로 알 수 있었던 점은 **오존과, 아황산가스를 제외한 대부분의 오염물질들이 2021년 10월 25일 - 27일 사이의 날짜에서 대기오염이 제일 심했다**. 아래는 분석한 그래프들이다.
 
-### 상관관계 분석
+### 일일 별 아황산가스 최대 수치 그래프
+![](https://velog.velcdn.com/images/jaepal/post/4d6962a2-2b29-4c5f-a164-e4fd661a5a58/image.png)
+
+### 일일 별 일산화탄소 최대 수치 그래프
+![](https://velog.velcdn.com/images/jaepal/post/f590730c-7583-4108-8318-62c5434d8ed8/image.png)
+
+### 일일 별 이산화질소 최대 수치 그래프
+![](https://velog.velcdn.com/images/jaepal/post/50beef03-efba-4d3a-8ee0-526215411080/image.png)
+
+### 일일 별 미세먼지(PM10) 최대 수치 그래프
+![](https://velog.velcdn.com/images/jaepal/post/2e90915d-6671-44b9-a1b2-c389a4f1b4be/image.png)
+
+### 일일 별 오존 최대 수치 그래프
+![](https://velog.velcdn.com/images/jaepal/post/2016ab3a-996a-44d6-88de-ce15a4e64ca3/image.png)
+
+여기서 아황산가스와 오존 지수만, 다른 오염 물질들과의 날짜별로 공통적인 부분의 값을 찾지 못했다.
+
+### 각 데이터 간의 상관관계 분석
 
 해당 데이터를 통해 각 환경오염물질 간 상관관계를 파악할 수 있다.
 일단 상관계수에 따라 관계가 다르다. 아래와 같이 나뉜다.
@@ -831,10 +905,10 @@ plt.show()
 >음의 상관이긴하나, 너무 약하기 때문에 상관관계가 없다곤 할 수 없다.
 >
 >+ **0에 근접한 값일 경우**
->대부분의 경우가 **상관관계가 있다고 간주하지 않는다**. 2차 방정식 그래프와 비슷한 모양일 경우엔 상관관계가 있다곤 >할 수 있으나 회의적인 경우가 대부분이라고 한다.
+>대부분의 경우가 **상관관계가 있다고 간주하지 않는다**. 2차 방정식 그래프와 비슷한 모양일 경우엔 상관관계가 있다곤 할 수 있으나 회의적인 경우가 대부분이라고 한다.
 >
 >+ **0.2의 값에 가까울 경우**
->너무 약한 양의 상관이다. 이 값일 경우 **상관관계가 있다고 장담할 순 없으나, 사회과학에서는 큰 상관관계**가 있다고 >간주한다고 한다.
+>너무 약한 양의 상관이다. 이 값일 경우 **상관관계가 있다고 장담할 순 없으나, 사회과학에서는 큰 상관관계**가 있다고 간주한다고 한다.
 >
 >+ **0.5의 값에 가까운 값일 경우**
 >강력한 양의 상관이다. **X가 증가하면 Y또한 증가한다는 주장이 통계적으로 지지**받고 있다고 한다.
@@ -846,7 +920,7 @@ plt.show()
 
 + **일산화탄소**와의 상관관계에서 0.41의 값을 보여주고 있으며 이 경우에는 양의 관계라 볼수있다. **대기중 아황산가스 수치가 높으면 일산화탄소 또한 높다고 볼 수 있다.**
 
-+ **오존**과의 상관관계에서 0.2의 값을 보여주고 있으며 이 경우 약한 양의 상관관계다. **대기중에 아황산가스 수치가 >높다고 해서 오존이 무조건 높다고 볼 수 없다.** 
++ **오존**과의 상관관계에서 0.2의 값을 보여주고 있으며 이 경우 약한 양의 상관관계다. **대기중에 아황산가스 수치가 높다고 해서 오존이 무조건 높다고 볼 수 없다.** 
 
 + **이산화질소**와의 상관관계에서 0.26의 값을 보여주고 있으며 이 또한 오존과 같이 약한 양의 상관관계다.
 
@@ -895,3 +969,12 @@ plt.show()
 ### PM2.5의 상관관계
 
 + **온도(Temperture(°C)** 와의 상관관계에서 -0.03의 0에 근접하는 상관관계를 보여주고 있으며 **초미세먼지와 온도의 상관관계는 없다고 볼 수 있다.**
+
+## 프로젝트를 완료한 후 느낀 점 📙
+
+이번 데이터 전처리 텀 프로젝트를 하면서 처음으로 단독적으로 데이터들을 분석하고 시각화를 처음 진행해봤다. 첫 번째 데이터의 분석은 전처리하고 시각화 하는데에 큰 문제는 없었으나 두 번째 데이터인 환경 데이터를 전처리 및 시각화하고 그래프를 추출하는 과정에서 큰 어려움을 겪었다. 
+
+일단 제일 큰 문제였던 것은 통계분석을 따로 공부한 적이 없었기에, 처음에 그래프를 뽑아내고 분석하는 과정에서 상관계수와 산점도의 대한 기초 개념이 부족하여 코드를 작성하면서 몰랐던 부분을 위키나 웹 등을 찾아보며 공부했다. 
+
+이런 과정을 거치며 데이터를 분석하기 전에 전처리하는 과정이 매우 중요하다는 것을 알았으며,
+이 데이터는 어떤식으로 전처리 해줘야 하는것이고 전처리 하는 과정에서 결측치에 대한 값을 어떻게 설정해야 하는지 코드 작성자(또는 분석가)가 판단 해야 한다는 몫이라 생각했다.

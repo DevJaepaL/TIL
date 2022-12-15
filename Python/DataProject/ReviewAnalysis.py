@@ -55,11 +55,11 @@ tag = counts.most_common(50)
 print(tag)
 
 # # 6. '올빼미' 영화에 대한 WordCloud 생성
-# font_path = 'C:\Windows\Fonts\malgun.ttf'
-# wc = WordCloud(font_path=font_path, background_color='black', max_font_size=50)
+font_path = 'C:\Windows\Fonts\malgun.ttf'
+wc = WordCloud(font_path=font_path, background_color='black', max_font_size=50)
 
 # # 빈도수가 많은 상위 50개의 단어로 워드클라우드 생성
-# cloud = wc.generate_from_frequencies(dict(tag))
+cloud = wc.generate_from_frequencies(dict(tag))
 # # 화면에 출력
-# plt.imshow(cloud)
-# plt.show()
+plt.imshow(cloud)
+plt.show()

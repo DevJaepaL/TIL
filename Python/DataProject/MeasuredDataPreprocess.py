@@ -36,9 +36,14 @@ corr_df = df.corr() # 상관계수 데이터 프레임 생성
 corr_df = corr_df.apply(lambda x: round(x,2)) # 가독성을 위한 소수점 제거
 print(corr_df)
 
-# 7. 히스토그램(도수분포표) 시각화
-sns.set(style='whitegrid', context='notebook')
-sns.pairplot(df.corr(), height=2.0)
+# 7. 히스토그램 시각화
+columns = ['Sulfurous', 'Carbon', 'Ozone', 
+        'Nitrogen', 'PM10', 'PM2.5', 'Temperature(°C)']
+plt.figure(figsize=(10,10))
+for i in range(len(columns)):
+        plt.hist(df[columns[i]], color='orange')
+        plt.subplot(3,3, i+1)
+        plt.title(columns[i])
 plt.show()
 
 # 8. 막대그래프로 일별 현황 그래프 출력
@@ -47,18 +52,18 @@ plt.show()
 group_df = df
 group_df['Date'] = df['Date'].dt.date
 
-# 년,월,일 그룹화 후, 온도의 평균 새로운 컬럼 추가
-group_df['Mean'] = group_df.groupby(['Date'])['Temperature(°C)'].transform("mean")
+# 년,월,일 그룹화 후, 미세먼지 평균 수치 새로운 컬럼 추가
+group_df['Max'] = group_df.groupby(['Date'])['Sulfurous'].transform("max")
 # 날짜 중복 제거
 newGroup = group_df.drop_duplicates(['Date'])
 print(newGroup)
 
 # 그래프 시각화
 plt.figure(figsize=(14,8))
-plt.title('Average Day Temperature')
-plt.plot(newGroup['Date'],newGroup['Mean'])
+plt.title('Per Day Max Sulfurous Values')
+plt.plot(newGroup['Date'],newGroup['Max'], color='peru')
 plt.xlabel('Day')
-plt.ylabel('Temperature(°C)')
+plt.ylabel('Sulfurous')
 plt.xticks(rotation=45)
 plt.grid(True)
 ax = plt.gca()
