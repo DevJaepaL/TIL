@@ -1,1 +1,1 @@
-select * from flowerpot
+select * from flowerbed
