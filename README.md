@@ -21,6 +21,10 @@ ___
   + Tkinter Calc
   + Ch.1 파이썬이란 ?
   + Ch.2 변수, 출력문, 데이터 표현 단위
+  + Pandas Data
+  + Kakao Messenger API
+  + Kakao Rest API
+  + Data Analasys Project
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
    + SQL 문제 모음
