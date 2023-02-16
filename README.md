@@ -1,7 +1,4 @@
 # Today I Learned 📘
-```
-공부한 것을 커밋 하자! 😚
-```
 ___
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Algorithm"><b>`Algorithm`</b></a>  
