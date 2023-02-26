@@ -1,8 +1,8 @@
 # Today I Learned 📘
 ___
 
-+ [디자인 패턴](https://github.com/DevJaepaL/TIL/tree/main/Patteern)
-  + SingleTon
++ [디자인 패턴](https://github.com/DevJaepaL/TIL/tree/main/Pattern)
+  + [SingleTon](https://github.com/DevJaepaL/TIL/tree/main/Pattern/src/SingleTon)
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Algorithm"><b>`Algorithm`</b></a>  
   + 소수 값 구하기
