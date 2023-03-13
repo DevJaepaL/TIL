@@ -12,3 +12,4 @@ public class Hello { // Hello 클래스 선언
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA/PetContainer">펫 컨테이너</a> 🐶
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA/HashMap">HashMap</a>
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JAVA/Basics">Java Basic</a>
++ [선교자와 식인종 게임](https://github.com/DevJaepaL/TIL/tree/main/JAVA/Cannibals)
