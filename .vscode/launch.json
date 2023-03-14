@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "World",
+            "request": "launch",
+            "mainClass": "CannibalsGame.World",
+            "projectName": "TIL_c6d1ad71"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
