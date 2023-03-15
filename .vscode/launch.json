@@ -9,7 +9,11 @@
             "name": "World",
             "request": "launch",
             "mainClass": "CannibalsGame.World",
+<<<<<<< Updated upstream
             "projectName": "TIL_c6d1ad71"
+=======
+            "projectName": "TIL_caff379f"
+>>>>>>> Stashed changes
         },
         {
             "type": "java",
