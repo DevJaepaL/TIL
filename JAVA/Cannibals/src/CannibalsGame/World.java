@@ -154,8 +154,6 @@ public class World {
             int[] rData = game.autoCommand();
             int autoInputC = rData[0];
             int autoInputK = rData[1];     
-            System.out.println(autoInputC + " , " + autoInputK);
-            Thread.sleep(500);
 
             if (game.checkLocatation(true)) {
                 game.MoveRight(autoInputC, autoInputK);
@@ -166,6 +164,7 @@ public class World {
             if(state == 1) {
                 // Game Over
                 game.Init();
+
             } else if(state == 2) {
                 // Game Win
                 System.out.println("Win");
