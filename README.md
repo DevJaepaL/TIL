@@ -14,7 +14,7 @@ ___
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/JavaScript"><b>`JavaScript`</b></a>  
   + 자바스크립트 기초 정리
   
-+ <a href="https://github.com/DevJaepaL/TIL/tree/main/Python"><b>`Python`</b></a>
++ [**`Python`**](https://github.com/DevJaepaL/TIL/tree/main/Python)
   + PandasData
   + KoNLPy
   + Tkinter Calc
