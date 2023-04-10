@@ -24,6 +24,7 @@ ___
   + Kakao Messenger API
   + Kakao Rest API
   + Data Analasys Project
+  + Regression
 
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/DB"><b>`DataBase`</b></a> 
    + SQL 문제 모음

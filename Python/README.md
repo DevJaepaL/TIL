@@ -1,4 +1,4 @@
-# Python 공부 일지 🐍
+# TIL to Python 🐍
 
 ```python
 >>> print("Hello World !")
@@ -15,5 +15,6 @@ Hello World !
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/KakaoMessegeAPI">Kakao Messenger API</a>
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/KakaoRestAPI">Kakao Rest API</a>
 + <a href="https://github.com/DevJaepaL/TIL/tree/main/Python/DataProject">Data Analasys Project</a>
++ [Regression](https://github.com/DevJaepaL/TIL/tree/main/Python/Regression)
 
 
